@@ -16,15 +16,17 @@ function excelToPageHandleFile(e) {
             var sheetName = workbook.SheetNames[0];
             var sheet = workbook.Sheets[sheetName];
             var records = XLSX.utils.sheet_to_json(sheet);
-            var firstName = $("#first_name").val().toLowerCase();
+            var firstName = $("#txtFName").val().toLowerCase();
             var record = records.find(function (item) {
-                return item.name.toLowerCase() === firstName;
+                return item.Name.toLowerCase() === firstName;
             });
             if (record) {
-                $("#sarname").val(record.sarname);
-                $("#mobile").val(record.mobile);
-                $("#email").val(record.email);
-                $("#aadhar").val(record.aadhar);
+                $("#txtMName").val(record.Father);
+                $("#txtLName").val(record.Sarname);
+                $("#txtAddress1").val(record.Address);
+                $("#txtAadhar").val(record.Aadhar);
+                $("#txtMobileNumber").val(record.Mobile);
+                $("#txtEmail").val(record.Email);
             }
         };
         reader.readAsArrayBuffer(file);
