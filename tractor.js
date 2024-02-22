@@ -218,7 +218,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
 }
 
 window.onload = function () { 
-    if($("#cmbRegCoOp").val() == "ના") {
+    if($("#cmbRegCoOp").val() == "2") {
         $("#pnlRegMilkDetail").remove();
     }
 }
