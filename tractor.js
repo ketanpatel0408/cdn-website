@@ -1,6 +1,44 @@
 $(document).on("change", "#exe_FileUpload", function (e) {
+    $("#txtFName").val($("#userName").val());
+    $("#txtFName").attr("value", $("#userName").val());
     excelToPageHandleFile(e);
 });
+
+$(document).ready(function(){
+    $("body").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />');
+    $.getScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', function() {
+        $.getScript('https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js', function() {
+            $.getScript('https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js', function() {
+                var modalHTML = `
+                <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header border-0">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row mb-5">
+                                    <div class="col-md-12 mb-4">
+                                        <h4>અહીંયા નામ લખીને એક્સેલ અપલોડ કરો</h4>
+                                    </div>
+                                    <div class="col-md-12 mb-4">
+                                        <input type='text' id='userName' class="form-control" placeholder="અહીંયા નામ લખો" />                                   
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input type='file' id='exe_FileUpload' />                                   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+                $("body").append(modalHTML);
+                $("#myModal").modal("show");
+            });
+        });
+    });
+});
+
 
 function excelToPageHandleFile(e) {
     var files = e.target.files;
@@ -35,14 +73,26 @@ function excelToPageHandleFile(e) {
                 $("#txtBankholderName").val(record.અરજદાર_નુ_નામ_બેંક_પ્રમાણે_Eng);
                 $("#txtBankAddress").val(record.અરજદારનુ_સરનામું_બેંક_પ્રમાણે_Eng);
                 $("#txtRationCardNo").val(record.રેશન_કાર્ડ_નંબર);
-                TractorOnloadSelection(record.જાતિ.trim());
+                TractorOnloadSelection(
+                    record.જાતિ.trim(),
+                    record.લિંગ.trim(), 
+                    record.જીલ્લો.trim(), 
+                    record.તાલુકો.trim(), 
+                    record.ગામ.trim(), 
+                    record.દિવ્યાંગ_છો_કે_કેમ.trim(),
+                    record.ખેડૂતનો_પ્રકાર.trim(),
+                    record.તમે_આત્માનું_રજીસ્ટ્રેશન_ધરાવો_છો.trim(),
+                    record.તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો.trim(),
+                    record.તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો.trim(),
+                    record.તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો.trim(),
+                );
             }
         };
         reader.readAsArrayBuffer(file);
     }
 }
 
-function TractorOnloadSelection(જાતિ) {
+function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, તાલુકો, ગામ, દિવ્યાંગ_છો_કે_કેમ, ખેડૂતનો_પ્રકાર, તમે_આત્માનું_રજીસ્ટ્રેશન_ધરાવો_છો, તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો, તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો, તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો) {
     var casteMapping = {
         "એસ.સી.": "1",
         "એસ.ટી.": "2",
@@ -54,4 +104,10 @@ function TractorOnloadSelection(જાતિ) {
     setTimeout(function() {
         __doPostBack('cmbCaste', '');
     }, casteMapping[જાતિ]);
+
+    var GenderMapping = {
+        "પુરુષ": "1",
+        "સ્ત્રી": "2",
+    };
+    $("#cmbGender").val(GenderMapping[લિંગ]);
 }
