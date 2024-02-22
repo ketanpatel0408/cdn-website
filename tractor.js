@@ -175,6 +175,9 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         setTimeout(function() {
             __doPostBack('cmbRegCoOp', '');
         }, 0);
+        if($("#cmbRegCoOp").val() == PhysicialHandicapped["હા"]) {
+            $("#pnlRegMilkDetail").remove();
+        }
     }
 
     if($("#cmbRegCoOp").val() == PhysicialHandicapped["હા"]) {
@@ -194,8 +197,6 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         // if($("#cmbRegMilkNm").val() != "10823") {
         //     $("#cmbRegMilkNm").val("10823");
         // }
-    } else {
-        $("#pnlRegMilkDetail").remove();
     }
 
     if($("#cmbRegMilk").val() != PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
