@@ -86,6 +86,7 @@ function excelToPageHandleFile(e) {
                     record.તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો.trim(),
                     record.તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો.trim(),
                     record.તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો.trim(),
+                    record.દુધ_ઉત્પાદક_સહ્કારી_મંડળીનું_નામ.trim(),
                 );
             }
         };
@@ -93,7 +94,7 @@ function excelToPageHandleFile(e) {
     }
 }
 
-function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, તાલુકો, ગામ, દિવ્યાંગ_છો_કે_કેમ, ખેડૂતનો_પ્રકાર, તમે_આત્માનું_રજીસ્ટ્રેશન_ધરાવો_છો, તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો, તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો, તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો) {
+function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, તાલુકો, ગામ, દિવ્યાંગ_છો_કે_કેમ, ખેડૂતનો_પ્રકાર, તમે_આત્માનું_રજીસ્ટ્રેશન_ધરાવો_છો, તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો, તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો, તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો, દુધ_ઉત્પાદક_સહ્કારી_મંડળીનું_નામ) {
     var PhysicialHandicapped = {
         "ના": "2",
         "હા": "1",
@@ -176,6 +177,16 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         setTimeout(function() {
             __doPostBack('cmbRegCoOp', '');
         }, PhysicialHandicapped[ગામ]);
+    } else {
+        if($("#cmbRegMilkDist").val() != District[જીલ્લો]) {
+            $("#cmbRegMilkDist").val(District[જીલ્લો]);
+        }
+        if($("#cmbRegMilkTal").val() != Taluko[તાલુકો]) {
+            $("#cmbRegMilkTal").val(Taluko[તાલુકો]);
+        }
+        if($("#cmbRegMilkNm").val() != "10823") {
+            $("#cmbRegMilkNm").val("10823");
+        }
     }
 
     if($("#cmbRegMilk").val() != PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
@@ -195,5 +206,6 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
             __doPostBack('cmbLRCKhatedarType', '');
         }, LRCKhatedarType[તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો]);
     }
-    
+
+    $("#myModal").modal("hide");
 }

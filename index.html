@@ -9,30 +9,732 @@
 </head>
 
 <body>
-    <div>
-        <div style="margin-bottom: 20px;">
-            <lable>Name</lable>
-            <input type="text" id="first_name" />
+    <fieldset
+        style="width: 99%; padding: 2px 15px 2px 15px; border: 1px solid green; float: left; vertical-align: middle;">
+        <table class="childTablePublic">
+            <tbody>
+                <tr>
+                    <td align="center" style="background-color: #D9F2DA;">
+                        <span id="Label47" class="defLabel" style="font-size:16px;font-weight:bold;">અરજદારની
+                            વિગત</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="width: 100%;">
+                        <div id="pnlIndividualDetails" align="center" style="width:100%;">
+
+
+                            <table class="childTablePublic">
+
+                                <tbody>
+                                    <tr id="trApplicantName">
+                                        <td align="left">
+                                            <span id="Label55" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">નામ: </span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td class="tdLeft">
+                                            <input name="txtFName" type="text" maxlength="200" id="txtFName"
+                                                class="defInput" style="width:200px;">
+                                            <span id="rfvtxtFName" style="color:Red;visibility:hidden;">નામ દાખલ
+                                                કરો</span>
+                                        </td>
+                                        <td class="tdLeft">
+                                            <span id="lblApplicantMName" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">પિતા / પતિનું નામ: </span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td class="tdLeft">
+                                            <input name="txtMName" type="text" maxlength="200" id="txtMName"
+                                                class="defInput" style="width:200px;">
+                                            <span id="rfvtxtMName" style="color:Red;visibility:hidden;">પિતા / પતિનું
+                                                નામ દાખલ કરો</span>
+                                        </td>
+                                        <td class="tdLeft">
+                                            <span id="lblApplicantLName" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">અટક: </span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td class="tdLeft">
+                                            <input name="txtLName" type="text" maxlength="200" id="txtLName"
+                                                class="defInput" style="width:200px;">
+                                            <span id="rfvtxtLName" style="color:Red;visibility:hidden;">અટક દાખલ
+                                                કરો</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr id="trGenderCasteCategory">
+                                        <td align="left">
+                                            <span id="lblCaste" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">જાતિ: </span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td align="left">
+                                            <select name="cmbCaste"
+                                                onchange="javascript:setTimeout('__doPostBack(\'cmbCaste\',\'\')', 0)"
+                                                id="cmbCaste" class="defInput" style="width:120px;">
+                                                <option selected="selected" value="0">-- જાતિ પસંદ કરો --</option>
+                                                <option value="1">એસ.સી.</option>
+                                                <option value="2">એસ.ટી.</option>
+                                                <option value="3">ઓ.બી.સી.</option>
+                                                <option value="4">જનરલ</option>
+                                                <option value="5">આર્થિક રીતે નબળા</option>
+
+                                            </select>
+                                            <span id="rfvCaste" style="color:Red;visibility:hidden;">જાતિ પસંદ
+                                                કરો</span>
+                                        </td>
+                                        <td align="left">
+                                            <span id="lblGender" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">લિંગ: </span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td align="left">
+                                            <select name="cmbGender" id="cmbGender" class="defInput"
+                                                style="width:100px;">
+                                                <option value="0">-- લિંગ પસંદ કરો --</option>
+                                                <option value="1">પુરુષ</option>
+                                                <option value="2">સ્ત્રી</option>
+
+                                            </select>
+                                            <span id="rfvGender" style="color:Red;visibility:hidden;">લિંગ પસંદ
+                                                કરો</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="6" style="color: red">જે તાલુકા નો લક્ષાંક પુર્ણ થયેલ હશે. એ તાલુકો
+                                            દેખાશે નહિ </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" width="15%">
+                                            <span id="Label33" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">જીલ્લો: </span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td align="left">
+                                            <select name="cmbDistBasicDetails"
+                                                onchange="javascript:setTimeout('__doPostBack(\'cmbDistBasicDetails\',\'\')', 0)"
+                                                id="cmbDistBasicDetails" class="defInputddl"
+                                                style="font-weight:normal;width:200px;">
+                                                <option selected="selected" value="0">-- જીલ્લો પસંદ કરો --</option>
+                                                <option value="07">અમદાવાદ</option>
+                                                <option value="15">આણંદ</option>
+                                                <option value="21">ભરુચ</option>
+                                                <option value="33">છોટા ઉદેપુર</option>
+                                                <option value="06">ગાંધીનગર</option>
+                                                <option value="16">ખેડા</option>
+                                                <option value="04">મહેસાણા</option>
+                                                <option value="19">વડોદરા</option>
+
+                                            </select>
+                                            <span id="rfvDist" style="color:Red;visibility:hidden;">જીલ્લો પસંદ
+                                                કરો</span>
+                                        </td>
+                                        <td align="left" width="15%">
+                                            <span id="Label34" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">તાલુકો: </span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td align="left">
+                                            <select name="cmbTalukaBasicDetails"
+                                                onchange="javascript:setTimeout('__doPostBack(\'cmbTalukaBasicDetails\',\'\')', 0)"
+                                                id="cmbTalukaBasicDetails" class="defInputddl" style="width:200px;">
+                                                <option selected="selected" value="0">-- તાલુકો પસંદ કરો --</option>
+                                                <option value="14">અસારવા</option>
+                                            </select>
+                                            <span id="rfvTaluka" style="color:Red;visibility:hidden;">તાલુકો પસંદ
+                                                કરો</span>
+                                        </td>
+                                        <td align="left" width="18%">
+                                            <span id="Label35" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">ગામ: </span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td align="left">
+                                            <select name="cmbVlgBasicDetails"
+                                                onchange="javascript:setTimeout('__doPostBack(\'cmbVlgBasicDetails\',\'\')', 0)"
+                                                id="cmbVlgBasicDetails" class="defInputddl" style="width:200px;">
+                                                <option selected="selected" value="0">-- ગામ પસંદ કરો--</option>
+                                                <option value="0714003">કોતરપુર</option>
+                                            </select>
+                                            <span id="rfvVlgBasicDetails" style="color:Red;visibility:hidden;">ગામ પસંદ
+                                                કરો</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">
+                                            <span id="lblAdd1" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">સરનામું: </span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td class="tdLeft">
+                                            <input name="txtAdd1" type="text" maxlength="200" id="txtAdd1"
+                                                class="defInput" style="width:200px;">
+                                            <span id="rfvAdd1" style="color:Red;visibility:hidden;">સરનામું દાખલ
+                                                કરો</span>
+                                        </td>
+                                        <td class="tdRight">&nbsp;
+                                        </td>
+                                        <td class="tdLeft">
+                                            <input name="txtAdd2" type="text" maxlength="200" id="txtAdd2"
+                                                class="defInput" style="width:200px;">
+                                        </td>
+                                        <td class="tdRight">&nbsp;
+                                        </td>
+                                        <td class="tdLeft">
+                                            <input name="txtAdd3" type="text" maxlength="200" id="txtAdd3"
+                                                class="defInput" style="width:200px;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">
+                                            <span id="lblPinCode" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">પિન કોડ: </span>
+                                        </td>
+                                        <td align="left">
+                                            <input name="txtPinCode" type="text" maxlength="6" id="txtPinCode"
+                                                class="defInput" onkeypress="return isNumberKey(event)"
+                                                style="width:80px;">
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td align="left">
+                                            <span id="lblPhysicialHandicaped" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">દિવ્યાંગ છો કે કેમ ?: </span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td align="left">
+                                            <select name="cmbPhysicialHandicapped" id="cmbPhysicialHandicapped"
+                                                class="defInput" style="width:100px;">
+                                                <option selected="selected" value="0">-- પસંદ કરો --</option>
+                                                <option value="2"> ના </option>
+                                                <option value="1"> હા </option>
+
+                                            </select>
+                                            <span id="rfvPhysicialHandicapped"
+                                                style="color:Red;visibility:hidden;">દિવ્યાંગ છો કે કેમ તે પસંદ
+                                                કરો</span>
+                                        </td>
+                                        <td align="left">
+                                            <span id="lblEmail" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">ઇ-મેઇલ: </span>
+                                        </td>
+                                        <td align="left">
+                                            <input name="txtEmail" type="text" maxlength="45" id="txtEmail"
+                                                class="defInput" style="width:200px;">
+                                        </td>
+                                        <td id="td_FarmerCategory" align="left" colspan="2">
+                                            <span id="labelFarmerCategory" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">ખેડૂતનો પ્રકાર: </span>
+                                            <span class="defReqRed">*</span>
+                                            <select name="cmbFarmerCategory" id="cmbFarmerCategory"
+                                                title="ખેડૂતનો પ્રકાર પસંદ કરો. " class="defInput" style="width:120px;">
+                                                <option value="0">-- ખેડૂતનો પ્રકાર પસંદ કરો --</option>
+                                                <option value="1">નાના ( ૧.૦ થી ૨.૦ હે. )</option>
+                                                <option value="2">સીમાંત ( ૧.૦ હે. કે તેથી ઓછા )</option>
+                                                <option value="3">મોટા ( ૨.૦ હે. થી વધુ )</option>
+
+                                            </select>
+                                            <span id="rfvFarmerCategory" style="color:Red;visibility:hidden;">ખેડૂતનો
+                                                પ્રકાર પસંદ કરો</span>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td align="left">
+                                            <span id="lblMob" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">મોબાઇલ નંબર: </span>
+                                        </td>
+                                        <td align="left">
+                                            <input name="txtMobileNumber" type="text" maxlength="10"
+                                                id="txtMobileNumber" title="તમારો મોબાઇલ નંબર આપો" class="defInput"
+                                                onkeypress="return isNumberKey(event)" style="width:100px;">
+                                        </td>
+                                    </tr>
+                                    <tr id="tradhar">
+                                        <td align="left" style="vertical-align: top;">
+                                            <span id="lblAadhar" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">આધાર નંબર: </span>
+
+                                        </td>
+                                        <td align="left" colspan="5">
+                                            <input name="txtAadhar" type="text" maxlength="12" id="txtAadhar"
+                                                title="તમારો આધાર નંબર આપો"
+                                                class="defInput Changetextmode TexttoPassword"
+                                                onkeypress="return isNumberKey(event)" style="width:200px;">
+                                            <span id="togglepassword" toggle="#password-field"
+                                                onclick="togglepassword()" style="cursor: pointer">
+                                                <img src="../Images_Common/eye.png" id="imgeye"><img
+                                                    src="../Images_Common/hidden.png" id="imgeyehidden"
+                                                    hidden=""></span>
+                                            <br>
+
+
+                                            <span class="defLabel" style="font-size:10pt;"><input id="chkAadharConfirm"
+                                                    type="checkbox" name="chkAadharConfirm"><label
+                                                    for="chkAadharConfirm">હું મારો આધાર નંબર આપના ખાતાની યોજના અંતર્ગત
+                                                    મળવાપાત્ર યોજનાકીય લાભો મેળવવાનાં તથા રજીસ્ટ્રેશન કરાવવાનાં હેતુસર
+                                                    આપના ખાતા દ્વારા ઉપયોગમાં લેવા અંગે સંમતિ આપું છું.</label></span>
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td colspan="6">&nbsp;
+                                        </td>
+                                    </tr>
+
+                                    <tr id="trAatmaCoOpMilk">
+                                        <td align="left" width="15%">
+                                            <span id="lblRegAatma" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">તમે આત્માનું રજીસ્ટ્રેશન
+                                                ધરાવો છો?</span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td align="left">
+                                            <select name="cmbRegAatma" id="cmbRegAatma" class="defInput"
+                                                style="width:80px;">
+                                                <option value="0">-- પસંદ કરો --</option>
+                                                <option value="1">હા</option>
+                                                <option value="2">ના</option>
+
+                                            </select>
+                                        </td>
+                                        <td align="left" width="15%">
+                                            <span id="lblRegCoOp" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">તમે સહ્કારી મંડળીનાં સભ્ય છો
+                                                ?</span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td align="left">
+                                            <select name="cmbRegCoOp"
+                                                onchange="javascript:setTimeout('__doPostBack(\'cmbRegCoOp\',\'\')', 0)"
+                                                id="cmbRegCoOp" class="defInput" style="width:80px;">
+                                                <option selected="selected" value="0">-- પસંદ કરો --</option>
+                                                <option value="1">હા</option>
+                                                <option value="2">ના</option>
+
+                                            </select>
+                                        </td>
+                                        <td align="left" width="18%">
+                                            <span id="lblRegMilk" class="defLabel"
+                                                style="font-size:10pt;font-weight:normal;">તમે દૂધ ઉત્પદક સહ્કારી
+                                                મંડળીનાં સભ્ય છો ?</span>
+                                            <span class="defReqRed">*</span>
+                                        </td>
+                                        <td align="left">
+                                            <select name="cmbRegMilk"
+                                                onchange="javascript:setTimeout('__doPostBack(\'cmbRegMilk\',\'\')', 0)"
+                                                id="cmbRegMilk" class="defInput" style="width:80px;">
+                                                <option selected="selected" value="0">-- પસંદ કરો --</option>
+                                                <option value="1">હા</option>
+                                                <option value="2">ના</option>
+
+                                            </select>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <br>
+
+        <br>
+        <table class="childTablePublic">
+            <tbody>
+                <tr>
+                    <td colspan="6" width="100%" align="center" style="background-color: #D9F2DA;">
+                        <span id="lblBankDetailsHeader" class="defLabel" style="font-size:16px;font-weight:bold;">બેંકની
+                            વિગત</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="15%" align="left">
+                        <span id="Label22" class="defLabel"
+                            style="font-family:Arial Unicode MS;font-size:10pt;font-weight:normal;">બેંક IFSC કોડ:
+                        </span>
+                    </td>
+                    <td width="14%" align="left">
+                        <input name="txtIFSCCode" type="text" maxlength="11" id="txtIFSCCode" class="defInput"
+                            onkeypress="return isBankIFSC(event)" style="width:120px;">
+                    </td>
+                    <td width="15%" class="tdLeft">
+                        <input type="submit" name="btnSearchBankBranch" value="Show Bank Details / બેંકની માહિતી શોધો"
+                            onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnSearchBankBranch&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))"
+                            id="btnSearchBankBranch" class="MainBtn btn-success" style="width:222px;">
+                    </td>
+                    <td width="15%" align="left">
+                        <span id="Label17" class="defLabel"
+                            style="font-family:Arial Unicode MS;font-size:10pt;font-weight:normal;">બેંકનું નામ: </span>
+                    </td>
+                    <td width="22%" align="left">
+                        <select name="cmbBank" onchange="javascript:setTimeout('__doPostBack(\'cmbBank\',\'\')', 0)"
+                            id="cmbBank" class="defInput" style="width:240px;">
+                            <option selected="selected" value="0">-- બેંક પસંદ કરો --</option>
+
+                        </select>
+                    </td>
+                    <td width="14%" align="left">
+                        <span id="Label16" class="defLabel"
+                            style="font-family:Arial Unicode MS;font-size:10pt;font-weight:normal;">બેંક જીલ્લો: </span>
+                    </td>
+                    <td width="22%" align="left">
+                        <select name="cmbBankDist"
+                            onchange="javascript:setTimeout('__doPostBack(\'cmbBankDist\',\'\')', 0)" id="cmbBankDist"
+                            class="defInput" style="width:200px;">
+                            <option selected="selected" value="0">-- જીલ્લો પસંદ કરો --</option>
+                            <option value="07">AHMADABAD</option>
+                            <option value="13">AMRELI</option>
+                            <option value="31">ARVALLI</option>
+                            <option value="15">ANAND</option>
+                            <option value="01">KACHCHH</option>
+                            <option value="16">KHEDA</option>
+                            <option value="06">GANDHINAGAR</option>
+                            <option value="29">GIR SOMNATH</option>
+                            <option value="33">CHHOTAUDEPUR</option>
+                            <option value="12">JUNAGADH</option>
+                            <option value="10">JAMNAGAR</option>
+                            <option value="23">DANGS</option>
+                            <option value="26">TAPI</option>
+                            <option value="27">DEVBHUMI DWARKA</option>
+                            <option value="18">DAHOD</option>
+                            <option value="20">NARMADA</option>
+                            <option value="24">NAVSARI</option>
+                            <option value="17">PANCHMAHALS</option>
+                            <option value="03">PATAN</option>
+                            <option value="11">PORBANDAR</option>
+                            <option value="02">BANASKANTHA</option>
+                            <option value="30">BOTAD</option>
+                            <option value="21">BHARUCH</option>
+                            <option value="14">BHAVNAGAR</option>
+                            <option value="04">MAHESANA</option>
+                            <option value="32">MAHISAGAR</option>
+                            <option value="28">MORBI</option>
+                            <option value="09">RAJKOT</option>
+                            <option value="19">VADODARA</option>
+                            <option value="25">VALSAD</option>
+                            <option value="22">SURAT</option>
+                            <option value="08">SURENDRANAGAR</option>
+                            <option value="05">SABARKANTHA</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="7%" align="left">
+                        <span id="Label18" class="defLabel" style="font-size:10pt;">બેંક બ્રાંચ: </span>
+                    </td>
+                    <td width="26%" align="left" colspan="2">
+                        <select name="cmbBankBranch" id="cmbBankBranch" class="defInput" style="width:300px;">
+                            <option value="0">-- બેંક બ્રાંચ પસંદ કરો --</option>
+
+                        </select>
+                    </td>
+                    <td width="7%" align="left">
+                        <span id="Label20" class="defLabel"
+                            style="font-family:Arial Unicode MS;font-size:10pt;font-weight:normal;">બેંક ખાતા નંબર:
+                        </span>
+                    </td>
+                    <td width="20%" align="left">
+                        <input name="txtBankAccountNo" type="text" maxlength="100" id="txtBankAccountNo"
+                            class="defInput" style="width:200px;">
+                        <span id="RegularExpressionValidator3" style="color:Red;display:none;">Invalid Bank Account No
+                            Characters(Allow Only English
+                            Characters and 0 to 9)</span>
+                    </td>
+                    <td width="7%" align="left">
+                        <span id="Label69" class="defLabel"
+                            style="font-family:Arial Unicode MS;font-size:10pt;font-weight:normal;">કન્ફર્મ બેંક ખાતા
+                            નંબર: </span>
+                    </td>
+                    <td width="26%" align="left">
+                        <input name="txtConfirmBankAccountNo" type="text" maxlength="100" id="txtConfirmBankAccountNo"
+                            class="defInput" oncut="return false;" oncopy="return false;" onpaste="return false;"
+                            autocomplete="off" style="width:200px;">
+                        <span id="CompareValidator1" style="color:Red;display:none;">Your Confirm bank account no do not
+                            match</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="7%" align="left">
+                        <span id="lblApplicantNameAsPerBank" class="defLabel"
+                            style="font-family:Arial Unicode MS;font-size:10pt;font-weight:normal;">અરજદાર નુ નામ બેંક
+                            પ્રમાણે (Eng) : </span>
+                    </td>
+                    <td width="26%" align="left" colspan="2">
+                        <input name="txtBankholderName" type="text" maxlength="100" id="txtBankholderName"
+                            class="defInput" style="width:200px;">
+                        <span id="RegularExpressionValidator1" style="color:Red;display:none;">Invalid Bank Holder Name
+                            Characters(Allow Only English
+                            Characters)</span>
+                    </td>
+                    <td width="7%" align="left">
+                        <span id="lblApplicantAddAsPerBank" class="defLabel"
+                            style="font-family:Arial Unicode MS;font-size:10pt;font-weight:normal;">અરજદાર નુ સરનામું
+                            બેંક પ્રમાણે (Eng) : </span>
+                    </td>
+                    <td align="left">
+                        <input name="txtBankAddress" type="text" maxlength="150" id="txtBankAddress" class="defInput"
+                            style="width:240px;">
+                        <span id="RegularExpressionValidator2" style="color:Red;display:none;">Invalid Address
+                            Characters(Allow Only English
+                            Characters , 0 to 9 and Special Symbol , and - )</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div id="pnlLRCDetails" align="center" style="width:100%;">
+
+            <table class="childTablePublic">
+                <tbody>
+                    <tr>
+                        <td colspan="6" width="100%" align="center" style="background-color: #D9F2DA;">
+                            <span id="Label4" class="defLabel" style="font-size:16px;font-weight:bold;">જમીનની
+                                વિગત</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" colspan="6">
+                            <span id="Label1" class="defLabel"
+                                style="font-family:Arial Unicode MS;font-size:10pt;font-weight:normal;">તમે કેવા
+                                પ્રકારના ખાતેદાર છો તે પસંદ કરો ?</span>
+                            <span id="spanLRCKhatedarType" class="defReqRed">*</span>
+                            &nbsp;&nbsp;
+                            <select name="cmbLRCKhatedarType"
+                                onchange="javascript:setTimeout('__doPostBack(\'cmbLRCKhatedarType\',\'\')', 0)"
+                                id="cmbLRCKhatedarType" class="defInputddl" style="width:180px;">
+                                <option selected="selected" value="0">-- પસંદ કરો --</option>
+                                <option value="1">જમીન રેકોર્ડ ધરાવું છું</option>
+                                <option value="2">ટ્રાઇબલ લેન્ડ ધરાવું છું</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">&nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdLeft">
+                            <span id="lblRegMilkDist" class="defLabel"
+                                style="font-size:10pt;font-weight:normal;">જીલ્લો: </span>
+                            <span class="defReqRed">*</span>
+                        </td>
+                        <td class="tdLeft">
+                            <select name="cmbRegMilkDist"
+                                onchange="javascript:setTimeout('__doPostBack(\'cmbRegMilkDist\',\'\')', 0)"
+                                id="cmbRegMilkDist" class="defInput" style="font-weight:normal;width:200px;">
+                                <option value="0">-- જીલ્લો પસંદ કરો --</option>
+                                <option value="07">અમદાવાદ</option>
+                                <option value="13">અમરેલી</option>
+                                <option value="15">આણંદ</option>
+                                <option value="31">અરવલ્લી</option>
+                                <option value="02">બનાસકાંઠા</option>
+                                <option value="21">ભરુચ</option>
+                                <option value="14">ભાવનગર</option>
+                                <option value="30">બોટાદ</option>
+                                <option value="33">છોટા ઉદેપુર</option>
+                                <option value="18">દાહોદ</option>
+                                <option value="23">ડાંગ</option>
+                                <option value="27">દેવભુમિ દ્વારકા</option>
+                                <option value="06">ગાંધીનગર</option>
+                                <option value="29">ગીર સોમનાથ</option>
+                                <option value="10">જામનગર</option>
+                                <option value="12">જુનાગઢ</option>
+                                <option value="01">કચ્છ</option>
+                                <option value="16">ખેડા</option>
+                                <option value="04">મહેસાણા</option>
+                                <option value="32">મહિસાગર</option>
+                                <option value="28">મોરબી</option>
+                                <option value="20">નર્મદા</option>
+                                <option value="24">નવસારી</option>
+                                <option value="17">પંચમહાલ</option>
+                                <option value="03">પાટણ</option>
+                                <option value="11">પોરબંદર</option>
+                                <option value="09">રાજકોટ</option>
+                                <option value="05">સાબરકાંઠા</option>
+                                <option value="22">સુરત</option>
+                                <option selected="selected" value="08">સુરેન્દ્રનગર</option>
+                                <option value="26">તાપી</option>
+                                <option value="19">વડોદરા</option>
+                                <option value="25">વલસાડ</option>
+
+                            </select>
+                        </td>
+                        <td class="tdLeft">
+                            <span id="lblRegMilkTal" class="defLabel" style="font-size:10pt;font-weight:normal;">તાલુકો:
+                            </span>
+                            <span class="defReqRed">*</span>
+                        </td>
+                        <td class="tdLeft">
+                            <select name="cmbRegMilkTal"
+                                onchange="javascript:setTimeout('__doPostBack(\'cmbRegMilkTal\',\'\')', 0)"
+                                id="cmbRegMilkTal" class="defInput" style="width:200px;">
+                                <option value="0">-- તાલુકો પસંદ કરો --</option>
+                                <option value="09">ચુડા</option>
+                                <option value="07">ચોટીલા</option>
+                                <option value="11">થાનગઢ</option>
+                                <option value="03">દસાડા</option>
+                                <option value="02">ધાંગધ્રા</option>
+                                <option selected="selected" value="06">મૂળી</option>
+                                <option value="04">લખતર</option>
+                                <option value="10">લીંબડી</option>
+                                <option value="05">વઢવાણ</option>
+                                <option value="12">સુરેન્દ્રનગર શહેર</option>
+                                <option value="08">સાયલા</option>
+
+                            </select>
+                        </td>
+                        <td class="tdLeft">
+                            <span id="lblRegMilkNm" class="defLabel" style="font-size:10pt;font-weight:normal;">દુધ
+                                ઉત્પાદક સહ્કારી મંડળીનું નામ: </span>
+                            <span class="defReqRed">*</span>
+                        </td>
+                        <td class="tdLeft">
+                            <select name="cmbRegMilkNm" id="cmbRegMilkNm" class="defInput" style="width:300px;">
+                                <option value="0">-- દુધ ઉત્પાદક સહ્કારી મંડળી પસંદ કરો --</option>
+                                <option value="10868">AMBARDI</option>
+                                <option value="10817">ASUNDARALI</option>
+                                <option value="10818">BHAVANIGADH</option>
+                                <option value="10874">BHET </option>
+                                <option value="10819">CHANPAR</option>
+                                <option value="10821">DANAVALA</option>
+                                <option value="10822">DEVPARA(M)</option>
+                                <option value="10820">DHAGHAROLIYA</option>
+                                <option value="10823">DHARMENDRAGADH</option>
+                                <option value="10824">DHOLIYA</option>
+                                <option value="10826">DIGSAR</option>
+                                <option value="10825">DUDHAI</option>
+                                <option value="10827">GADHAD</option>
+                                <option value="10872">GADHAD(VADI/MAHILA)</option>
+                                <option value="10828">GADHHDA</option>
+                                <option value="10829">GAUTAM GADHH</option>
+                                <option value="10830">GODAVRI</option>
+                                <option value="10831">HEMATPAR</option>
+                                <option value="10832">JASHAPAR(M)</option>
+                                <option value="10833">KALMAD</option>
+                                <option value="10834">KARSNGADH MAHILA</option>
+                                <option value="10835">KHAKHRALA</option>
+                                <option value="10838">KHAMPALIYA</option>
+                                <option value="10837">KHATDI</option>
+                                <option value="10840">KUKDA MAHILA</option>
+                                <option value="10839">KUNTALPUR</option>
+                                <option value="10841">LIMBLI</option>
+                                <option value="10842">LIYA</option>
+                                <option value="10843">MAHADEVGADHH</option>
+                                <option value="10873">MAHADEVPARA MAHILA</option>
+                                <option value="10844">MANPAR(M)</option>
+                                <option value="28707">MPP of Maahi Milk Producer Company Limited</option>
+                                <option value="10867">MULI</option>
+                                <option value="10852">N.RAYSANGPAR</option>
+                                <option value="10845">NADDHRI</option>
+                                <option value="10846">NALIYA</option>
+                                <option value="10870">NALIYERI(MULI)</option>
+                                <option value="10871">NAVA UMARDA MAHILA</option>
+                                <option value="10848">PALASA</option>
+                                <option value="10849">PANDVRA</option>
+                                <option value="27354">Pir Dradholiya (Mahila)</option>
+                                <option value="10869">RAMPAR(MULI)</option>
+                                <option value="10850">RAMPRDA(M)</option>
+                                <option value="10851">RANIPAT</option>
+                                <option value="10853">SADLA(M)</option>
+                                <option value="10854">SAGDHRA</option>
+                                <option value="10855">SARA MAHILA</option>
+                                <option value="10856">SHEKHAPAR</option>
+                                <option value="29313">SHREE NAVANIYA DUSML</option>
+                                <option value="10857">SIDHASAR</option>
+                                <option value="10858">SOMASAR</option>
+                                <option value="10859">TIDANA</option>
+                                <option value="10860">TIKER(SHIV)</option>
+                                <option value="10861">UMARDA</option>
+                                <option value="10863">VADDHRA</option>
+                                <option value="10862">VAGDIYA MAHILA</option>
+                                <option value="10864">VELADA(DH)</option>
+                                <option value="10866">VIRPAR</option>
+
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left">
+
+
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
-        <div style="margin-bottom: 20px;">
-            <lable>Sarname</lable>
-            <input type="text" id="sarname" />
+        <br>
+
+        <br>
+        <div id="pnlRationCard">
+
+            <table class="childTablePublic">
+                <tbody>
+                    <tr>
+                        <td colspan="3" width="100%" align="center" style="background-color: #D9F2DA;">
+                            <span id="Label30" class="defLabel" style="font-size:16px;font-weight:bold;">રેશન કાર્ડની
+                                વિગત</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdLeft" width="8%">
+                            <span id="Label29" class="defLabel"
+                                style="font-family:Arial Unicode MS;font-size:10pt;font-weight:normal;">રેશન કાર્ડ નંબર:
+                            </span>
+
+                        </td>
+                        <td class="tdLeft" width="18%">
+                            <input name="txtRationCardNo" type="text" maxlength="15" id="txtRationCardNo"
+                                class="defInput" onkeypress="return isNumberKey(event)" style="width:150px;">
+                        </td>
+                        <td class="tdLeft">
+                            <input type="submit" name="btnSearchRationCardDetails" value="Search / શોધો"
+                                onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnSearchRationCardDetails&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))"
+                                id="btnSearchRationCardDetails" class="MainBtn" style="width:150px;">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table width="70%">
+                <tbody>
+                    <tr>
+                        <td align="center">
+                            <br>
+
+                            <div>
+
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
-        <div style="margin-bottom: 20px;">
-            <lable>Mobile</lable>
-            <input type="text" id="mobile" />
-        </div>
-        <div style="margin-bottom: 20px;">
-            <lable>Email</lable>
-            <input type="text" id="email" />
-        </div>
-        <div style="margin-bottom: 20px;">
-            <lable>Aadhar</lable>
-            <input type="text" id="aadhar" />
-        </div>
-    </div>
+        <br>
+
+        <br>
+    </fieldset>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src='main.js'></script>
 </body>
 
 </html>
