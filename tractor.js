@@ -183,9 +183,9 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         if($("#cmbRegMilkTal").val() != Taluko[તાલુકો]) {
             $("#cmbRegMilkTal").val(Taluko[તાલુકો]);
         }
-        if($("#cmbRegMilkNm").val() != "10823") {
-            $("#cmbRegMilkNm").val("10823");
-        }
+        // if($("#cmbRegMilkNm").val() != "10823") {
+        //     $("#cmbRegMilkNm").val("10823");
+        // }
     }
 
     if($("#cmbRegMilk").val() != PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
