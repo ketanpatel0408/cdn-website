@@ -5,7 +5,6 @@ $(document).on("change", "#exe_FileUpload", function (e) {
 });
 
 $(document).ready(function(){
-    $("#userName").val($("#txtFName").val());
     $("body").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />');
     $.getScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', function() {
         $.getScript('https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js', function() {
@@ -34,6 +33,7 @@ $(document).ready(function(){
                     </div>
                 </div>`;
                 $("body").append(modalHTML);
+                $("#userName").val($("#txtFName").val());
                 $("#myModal").modal("show");
             });
         });
@@ -94,6 +94,27 @@ function excelToPageHandleFile(e) {
 }
 
 function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, તાલુકો, ગામ, દિવ્યાંગ_છો_કે_કેમ, ખેડૂતનો_પ્રકાર, તમે_આત્માનું_રજીસ્ટ્રેશન_ધરાવો_છો, તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો, તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો, તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો) {
+    var PhysicialHandicapped = {
+        "ના": "2",
+        "હા": "1",
+    };
+    if($("#cmbPhysicialHandicapped").val() != PhysicialHandicapped[દિવ્યાંગ_છો_કે_કેમ]) {
+        $("#cmbPhysicialHandicapped").val(PhysicialHandicapped[દિવ્યાંગ_છો_કે_કેમ]);
+    }
+
+    var FarmerCategory = {
+        "નાના ( ૧.૦ થી ૨.૦ હે. )": "1",
+        "સીમાંત ( ૧.૦ હે. કે તેથી ઓછા )": "2",
+        "મોટા ( ૨.૦ હે. થી વધુ )": "3",
+    };
+    if($("#cmbFarmerCategory").val() != FarmerCategory[ખેડૂતનો_પ્રકાર]) {
+        $("#cmbFarmerCategory").val(FarmerCategory[ખેડૂતનો_પ્રકાર]);
+    }
+
+    if($("#cmbRegAatma").val() != PhysicialHandicapped[તમે_આત્માનું_રજીસ્ટ્રેશન_ધરાવો_છો]) {
+        $("#cmbRegAatma").val(PhysicialHandicapped[તમે_આત્માનું_રજીસ્ટ્રેશન_ધરાવો_છો]);
+    }
+    
     var casteMapping = {
         "એસ.સી.": "1",
         "એસ.ટી.": "2",
@@ -137,4 +158,42 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
             __doPostBack('cmbTalukaBasicDetails', '');
         }, Taluko[તાલુકો]);
     }
+
+    var Village = {
+        "કોતરપુર": "0714003",
+    };
+
+    if($("#cmbVlgBasicDetails").val() != Village[ગામ]) {
+        $("#cmbVlgBasicDetails").val(Village[ગામ]);
+        setTimeout(function() {
+            __doPostBack('cmbVlgBasicDetails', '');
+        }, Village[ગામ]);
+    }
+
+
+    if($("#cmbRegCoOp").val() != PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
+        $("#cmbRegCoOp").val(PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
+        setTimeout(function() {
+            __doPostBack('cmbRegCoOp', '');
+        }, PhysicialHandicapped[ગામ]);
+    }
+
+    if($("#cmbRegMilk").val() != PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
+        $("#cmbRegMilk").val(PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
+        setTimeout(function() {
+            __doPostBack('cmbRegMilk', '');
+        }, PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
+    }
+
+    var LRCKhatedarType = {
+        "જમીન રેકોર્ડ ધરાવું છું": "1",
+        "ટ્રાઇબલ લેન્ડ ધરાવું છું": "2",
+    };
+    if($("#cmbLRCKhatedarType").val() != LRCKhatedarType[તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો]) {
+        $("#cmbLRCKhatedarType").val(LRCKhatedarType[તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો]);
+        setTimeout(function() {
+            __doPostBack('cmbLRCKhatedarType', '');
+        }, LRCKhatedarType[તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો]);
+    }
+    
 }
