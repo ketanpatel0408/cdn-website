@@ -110,4 +110,22 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         "સ્ત્રી": "2",
     };
     $("#cmbGender").val(GenderMapping[લિંગ]);
+
+    var District = {
+        "અમદાવાદ": "07",
+    };
+
+    $("#cmbDistBasicDetails").val(District[જીલ્લો]);
+    setTimeout(function() {
+        __doPostBack('cmbDistBasicDetails', '');
+    }, District[જીલ્લો]);
+
+    var Taluko = {
+        "અસારવા": "14",
+    };
+
+    $("#cmbTalukaBasicDetails").val(Taluko[તાલુકો]);
+    setTimeout(function() {
+        __doPostBack('cmbTalukaBasicDetails', '');
+    }, Taluko[તાલુકો]);
 }
