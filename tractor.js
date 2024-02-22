@@ -35,7 +35,7 @@ function excelToPageHandleFile(e) {
                 $("#txtBankholderName").val(record.અરજદાર_નુ_નામ_બેંક_પ્રમાણે_Eng);
                 $("#txtBankAddress").val(record.અરજદારનુ_સરનામું_બેંક_પ્રમાણે_Eng);
                 $("#txtRationCardNo").val(record.રેશન_કાર્ડ_નંબર);
-                TractorOnloadSelection(record.જાતિ);
+                TractorOnloadSelection(record.જાતિ.trim());
             }
         };
         reader.readAsArrayBuffer(file);
