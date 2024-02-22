@@ -170,23 +170,30 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         }, Village[ગામ]);
     }
 
-
     if($("#cmbRegCoOp").val() != PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
         $("#cmbRegCoOp").val(PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
         setTimeout(function() {
             __doPostBack('cmbRegCoOp', '');
         }, PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
-    } else {
-        if($("#cmbRegMilkDist").val() != District[જીલ્લો]) {
-            $("#cmbRegMilkDist").val(District[જીલ્લો]);
-        }
-        if($("#cmbRegMilkTal").val() != Taluko[તાલુકો]) {
-            $("#cmbRegMilkTal").val(Taluko[તાલુકો]);
-        }
-        // if($("#cmbRegMilkNm").val() != "10823") {
-        //     $("#cmbRegMilkNm").val("10823");
-        // }
     }
+
+    if($("#cmbRegMilkDist").val() != District[જીલ્લો]) {
+        $("#cmbRegMilkDist").val(District[જીલ્લો]);
+        setTimeout(function() {
+            __doPostBack('cmbRegMilkDist', '');
+        }, District[જીલ્લો]);
+    }
+
+    if($("#cmbRegMilkTal").val() != Taluko[તાલુકો]) {
+        $("#cmbRegMilkTal").val(Taluko[તાલુકો]);
+        setTimeout(function() {
+            __doPostBack('cmbRegMilkTal', '');
+        }, Taluko[તાલુકો]);
+    }
+
+    // if($("#cmbRegMilkNm").val() != "10823") {
+    //     $("#cmbRegMilkNm").val("10823");
+    // }
 
     if($("#cmbRegMilk").val() != PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
         $("#cmbRegMilk").val(PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
