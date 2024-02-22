@@ -44,20 +44,14 @@ function excelToPageHandleFile(e) {
 
 function TractorOnloadSelection(જાતિ) {
     var casteMapping = {
-        "જનરલ": "4",
         "એસ.સી.": "1",
         "એસ.ટી.": "2",
         "ઓ.બી.સી.": "3",
+        "જનરલ": "4",
+        "આર્થિક રીતે નબળા": "5"
     };
-    if (casteMapping.hasOwnProperty(જાતિ)) {
-        $("#cmbCaste").val(casteMapping[જાતિ]);
-        setTimeout(function() {
-            __doPostBack('cmbCaste', '');
-        }, casteMapping[જાતિ]);
-    } else {
-        $("#cmbCaste").val("5");
-        setTimeout(function() {
-            __doPostBack('cmbCaste', '');
-        }, 5);
-    }
+    $("#cmbCaste").val(casteMapping[જાતિ]);
+    setTimeout(function() {
+        __doPostBack('cmbCaste', '');
+    }, casteMapping[જાતિ]);
 }
