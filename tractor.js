@@ -5,6 +5,9 @@ $(document).on("change", "#exe_FileUpload", function (e) {
 });
 
 $(document).ready(function(){
+    if($("#cmbRegCoOp").val() == "ના") {
+        $("#pnlRegMilkDetail").remove();
+    }
     $("body").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />');
     $.getScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', function() {
         $.getScript('https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js', function() {
@@ -98,12 +101,6 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         "ના": "2",
         "હા": "1",
     };
-
-    $("#cmbRegCoOp").val(PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
-    setTimeout(function() {
-        __doPostBack('cmbRegCoOp', '');
-    }, 0);
-
     if($("#cmbPhysicialHandicapped").val() != PhysicialHandicapped[દિવ્યાંગ_છો_કે_કેમ]) {
         $("#cmbPhysicialHandicapped").val(PhysicialHandicapped[દિવ્યાંગ_છો_કે_કેમ]);
     }
@@ -176,7 +173,12 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         }, 0);
     }
 
-    
+    if($("#cmbRegCoOp").val() != PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
+        $("#cmbRegCoOp").val(PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
+        setTimeout(function() {
+            __doPostBack('cmbRegCoOp', '');
+        }, 0);
+    }
 
     if($("#cmbRegCoOp").val() == PhysicialHandicapped["હા"]) {
         if($("#cmbRegMilkDist").val() != District[જીલ્લો]) {
@@ -215,11 +217,5 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         }, 0);
     }
 
-    $("#myModal").modal("hide");
+    $("#myModal").modal("hide");   
 }
-
-// window.onload = function () { 
-//     if($("#cmbRegCoOp").val() == "2") {
-//         $("#pnlRegMilkDetail").remove();
-//     }
-// }
