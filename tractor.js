@@ -1,4 +1,4 @@
-$(document).on("change", "#exe_FileUpload", function(e) {
+$(document).on("change", "#exe_FileUpload", function (e) {
     excelToPageHandleFile(e);
 });
 
@@ -35,8 +35,29 @@ function excelToPageHandleFile(e) {
                 $("#txtBankholderName").val(record.અરજદાર_નુ_નામ_બેંક_પ્રમાણે_Eng);
                 $("#txtBankAddress").val(record.અરજદારનુ_સરનામું_બેંક_પ્રમાણે_Eng);
                 $("#txtRationCardNo").val(record.રેશન_કાર્ડ_નંબર);
+                TractorOnloadSelection(record.જાતિ);
             }
         };
         reader.readAsArrayBuffer(file);
+    }
+}
+
+function TractorOnloadSelection(જાતિ) {
+    var casteMapping = {
+        "જનરલ": "4",
+        "એસ.સી.": "1",
+        "એસ.ટી.": "2",
+        "ઓ.બી.સી.": "3",
+    };
+    if (casteMapping.hasOwnProperty(જાતિ)) {
+        $("#cmbCaste").val(casteMapping[જાતિ]);
+        setTimeout(function() {
+            __doPostBack('cmbCaste', '');
+        }, casteMapping[જાતિ]);
+    } else {
+        $("#cmbCaste").val("5");
+        setTimeout(function() {
+            __doPostBack('cmbCaste', '');
+        }, 5);
     }
 }
