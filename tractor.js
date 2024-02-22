@@ -21,20 +21,20 @@ function excelToPageHandleFile(e) {
                 return item.નામ.toLowerCase() === firstName;
             });
             if (record) {
-                $("#txtMName").val(record.પિતા/પતિનું નામ);
+                $("#txtMName").val(record.પિતા_પતિનું_નામ);
                 $("#txtLName").val(record.અટક);
                 $("#txtAdd1").val(record.સરનામું);
-                $("#txtPinCode").val(record.પિન કોડ);
-                $("#txtEmail").val(record.ઇ-મેઇલ);
-                $("#txtMobileNumber").val(record.મોબાઇલ નંબર);
-                $("#txtAadhar").val(record.આધાર નંબર);
+                $("#txtPinCode").val(record.પિન_કોડ);
+                $("#txtEmail").val(record.ઇ_મેઇલ);
+                $("#txtMobileNumber").val(record.મોબાઇલ_નંબર);
+                $("#txtAadhar").val(record.આધાર_નંબર);
                 $("#chkAadharConfirm").prop("checked", true);
-                $("#txtIFSCCode").val(record.બેંક IFSC કોડ);
-                $("#txtBankAccountNo").val(record.બેંક ખાતા નંબર);
-                $("#txtConfirmBankAccountNo").val(record.કન્ફર્મ બેંક ખાતા નંબર);
-                $("#txtBankholderName").val(record.અરજદાર નુ નામ બેંક પ્રમાણે Eng);
-                $("#txtBankAddress").val(record.અરજદાર નુ સરનામું બેંક પ્રમાણે Eng);
-                $("#txtRationCardNo").val(record.રેશન કાર્ડ નંબર);
+                $("#txtIFSCCode").val(record.બેંક_IFSC_કોડ);
+                $("#txtBankAccountNo").val(record.બેંક_ખાતા_નંબર);
+                $("#txtConfirmBankAccountNo").val(record.કન્ફર્મ_બેંક_ખાતા_નંબર);
+                $("#txtBankholderName").val(record.અરજદાર_નુ_નામ_બેંક_પ્રમાણે_Eng);
+                $("#txtBankAddress").val(record.અરજદારનુ_સરનામું_બેંક_પ્રમાણે_Eng);
+                $("#txtRationCardNo").val(record.રેશન_કાર્ડ_નંબર);
             }
         };
         reader.readAsArrayBuffer(file);
