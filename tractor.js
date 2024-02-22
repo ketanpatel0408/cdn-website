@@ -5,9 +5,6 @@ $(document).on("change", "#exe_FileUpload", function (e) {
 });
 
 $(document).ready(function(){
-    if($("#cmbRegCoOp").val() == "ના") {
-        $("#pnlRegMilkDetail").remove();
-    }
     $("body").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />');
     $.getScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', function() {
         $.getScript('https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js', function() {
@@ -36,6 +33,9 @@ $(document).ready(function(){
                     </div>
                 </div>`;
                 $("body").append(modalHTML);
+                if($("#cmbRegCoOp").val() == "ના") {
+                    $("#pnlRegMilkDetail").remove();
+                }
                 $("#userName").val($("#txtFName").val());
                 $("#myModal").modal("show");
             });
