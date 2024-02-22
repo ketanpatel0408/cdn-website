@@ -175,7 +175,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         $("#cmbRegCoOp").val(PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
         setTimeout(function() {
             __doPostBack('cmbRegCoOp', '');
-        }, PhysicialHandicapped[ગામ]);
+        }, PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
     } else {
         if($("#cmbRegMilkDist").val() != District[જીલ્લો]) {
             $("#cmbRegMilkDist").val(District[જીલ્લો]);
