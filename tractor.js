@@ -100,32 +100,40 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         "જનરલ": "4",
         "આર્થિક રીતે નબળા": "5"
     };
-    $("#cmbCaste").val(casteMapping[જાતિ]);
-    setTimeout(function() {
-        __doPostBack('cmbCaste', '');
-    }, casteMapping[જાતિ]);
+    if($("#cmbCaste").val() != casteMapping[જાતિ]) {
+        $("#cmbCaste").val(casteMapping[જાતિ]);
+        setTimeout(function() {
+            __doPostBack('cmbCaste', '');
+        }, casteMapping[જાતિ]);
+    }
 
     var GenderMapping = {
         "પુરુષ": "1",
         "સ્ત્રી": "2",
     };
-    $("#cmbGender").val(GenderMapping[લિંગ]);
+    if($("#cmbCaste").val() != GenderMapping[લિંગ]) {
+        $("#cmbCaste").val(GenderMapping[લિંગ]);
+    }
 
     var District = {
         "અમદાવાદ": "07",
     };
 
-    $("#cmbDistBasicDetails").val(District[જીલ્લો]);
-    setTimeout(function() {
-        __doPostBack('cmbDistBasicDetails', '');
-    }, District[જીલ્લો]);
+    if($("#cmbDistBasicDetails").val() != District[જીલ્લો]) {
+        $("#cmbDistBasicDetails").val(District[જીલ્લો]);
+        setTimeout(function() {
+            __doPostBack('cmbDistBasicDetails', '');
+        }, District[જીલ્લો]);
+    }
 
     var Taluko = {
         "અસારવા": "14",
     };
 
-    $("#cmbTalukaBasicDetails").val(Taluko[તાલુકો]);
-    setTimeout(function() {
-        __doPostBack('cmbTalukaBasicDetails', '');
-    }, Taluko[તાલુકો]);
+    if($("#cmbTalukaBasicDetails").val() != Taluko[તાલુકો]) {
+        $("#cmbTalukaBasicDetails").val(Taluko[તાલુકો]);
+        setTimeout(function() {
+            __doPostBack('cmbTalukaBasicDetails', '');
+        }, Taluko[તાલુકો]);
+    }
 }
