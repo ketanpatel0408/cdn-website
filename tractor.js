@@ -33,7 +33,7 @@ $(document).ready(function(){
                     </div>
                 </div>`;
                 $("body").append(modalHTML);
-                if($("#cmbRegCoOp").val() == "ના") {
+                if($("#cmbRegCoOp").val() == "2") {
                     $("#pnlRegMilkDetail").remove();
                 }
                 $("#userName").val($("#txtFName").val());
