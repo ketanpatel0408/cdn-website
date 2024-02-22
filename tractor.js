@@ -175,9 +175,6 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         setTimeout(function() {
             __doPostBack('cmbRegCoOp', '');
         }, 0);
-        if($("#cmbRegCoOp").val() == PhysicialHandicapped["હા"]) {
-            $("#pnlRegMilkDetail").remove();
-        }
     }
 
     if($("#cmbRegCoOp").val() == PhysicialHandicapped["હા"]) {
@@ -218,4 +215,10 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
     }
 
     $("#myModal").modal("hide");
+}
+
+window.onload = function () { 
+    if($("#cmbRegCoOp").val() == "ના") {
+        $("#pnlRegMilkDetail").remove();
+    }
 }
