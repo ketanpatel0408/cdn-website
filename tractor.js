@@ -177,23 +177,24 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         }, 0);
     }
 
-    if($("#cmbRegMilkDist").val() != District[જીલ્લો]) {
-        $("#cmbRegMilkDist").val(District[જીલ્લો]);
-        setTimeout(function() {
-            __doPostBack('cmbRegMilkDist', '');
-        }, 0);
-    }
+    if($("#cmbRegCoOp").val() == PhysicialHandicapped[2]) {
+        if($("#cmbRegMilkDist").val() != District[જીલ્લો]) {
+            $("#cmbRegMilkDist").val(District[જીલ્લો]);
+            setTimeout(function() {
+                __doPostBack('cmbRegMilkDist', '');
+            }, 0);
+        }
+        if($("#cmbRegMilkTal").val() != Taluko[તાલુકો]) {
+            $("#cmbRegMilkTal").val(Taluko[તાલુકો]);
+            setTimeout(function() {
+                __doPostBack('cmbRegMilkTal', '');
+            }, 0);
+        }
 
-    if($("#cmbRegMilkTal").val() != Taluko[તાલુકો]) {
-        $("#cmbRegMilkTal").val(Taluko[તાલુકો]);
-        setTimeout(function() {
-            __doPostBack('cmbRegMilkTal', '');
-        }, 0);
+        // if($("#cmbRegMilkNm").val() != "10823") {
+        //     $("#cmbRegMilkNm").val("10823");
+        // }
     }
-
-    // if($("#cmbRegMilkNm").val() != "10823") {
-    //     $("#cmbRegMilkNm").val("10823");
-    // }
 
     if($("#cmbRegMilk").val() != PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
         $("#cmbRegMilk").val(PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
