@@ -126,7 +126,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         $("#cmbCaste").val(casteMapping[જાતિ]);
         setTimeout(function() {
             __doPostBack('cmbCaste', '');
-        }, casteMapping[જાતિ]);
+        }, 0);
     }
 
     var GenderMapping = {
@@ -145,7 +145,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         $("#cmbDistBasicDetails").val(District[જીલ્લો]);
         setTimeout(function() {
             __doPostBack('cmbDistBasicDetails', '');
-        }, District[જીલ્લો]);
+        }, 0);
     }
 
     var Taluko = {
@@ -156,7 +156,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         $("#cmbTalukaBasicDetails").val(Taluko[તાલુકો]);
         setTimeout(function() {
             __doPostBack('cmbTalukaBasicDetails', '');
-        }, Taluko[તાલુકો]);
+        }, 0);
     }
 
     var Village = {
@@ -167,28 +167,28 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         $("#cmbVlgBasicDetails").val(Village[ગામ]);
         setTimeout(function() {
             __doPostBack('cmbVlgBasicDetails', '');
-        }, Village[ગામ]);
+        }, 0);
     }
 
     if($("#cmbRegCoOp").val() != PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
         $("#cmbRegCoOp").val(PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
         setTimeout(function() {
             __doPostBack('cmbRegCoOp', '');
-        }, PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
+        }, 0);
     }
 
     if($("#cmbRegMilkDist").val() != District[જીલ્લો]) {
         $("#cmbRegMilkDist").val(District[જીલ્લો]);
         setTimeout(function() {
             __doPostBack('cmbRegMilkDist', '');
-        }, District[જીલ્લો]);
+        }, 0);
     }
 
     if($("#cmbRegMilkTal").val() != Taluko[તાલુકો]) {
         $("#cmbRegMilkTal").val(Taluko[તાલુકો]);
         setTimeout(function() {
             __doPostBack('cmbRegMilkTal', '');
-        }, Taluko[તાલુકો]);
+        }, 0);
     }
 
     // if($("#cmbRegMilkNm").val() != "10823") {
@@ -199,7 +199,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         $("#cmbRegMilk").val(PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
         setTimeout(function() {
             __doPostBack('cmbRegMilk', '');
-        }, PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
+        }, 0);
     }
 
     var LRCKhatedarType = {
@@ -210,7 +210,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         $("#cmbLRCKhatedarType").val(LRCKhatedarType[તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો]);
         setTimeout(function() {
             __doPostBack('cmbLRCKhatedarType', '');
-        }, LRCKhatedarType[તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો]);
+        }, 0);
     }
 
     $("#myModal").modal("hide");
