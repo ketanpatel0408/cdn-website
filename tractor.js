@@ -245,7 +245,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         });
     }
 
-    if ($("#cmbBank").val() == "47") {
+    if ($("#cmbBankDist").val() == "08") {
         if ($("#cmbBankBranch").val() == "0") {
             $('#cmbBankBranch option').each(function () {
                 if ($(this).val() !== "0") {
@@ -259,9 +259,8 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
             setTimeout(function () {
                 __doPostBack('cmbLRCKhataNumber', '');
             }, 0);
+            $("#myModal").modal("hide");
             alert("completed");
         }
     }
-
-    $("#myModal").modal("hide");
 }
