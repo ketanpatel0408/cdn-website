@@ -228,6 +228,17 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("btnSearchBankBranch", "", true, "", "", false, false));
     }
 
+    if($("#cmbBank").val() == "0") {
+        $('#cmbBank option').each(function() {
+            if($(this).val() !== "0") {
+                $("#cmbBank").val($(this).val());
+                setTimeout(function() {
+                    __doPostBack('cmbBank', '');
+                }, 0);
+            }
+        });
+    }
+
     if($("#cmbBankDist").val() == "0") {
         $('#cmbBankDist option').each(function() {
             if($(this).val() !== "0") {
@@ -238,7 +249,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
             }
         });
     }
-    
+
     if($("#cmbBankBranch").val() == "0") {
         $('#cmbBankBranch option').each(function() {
             if($(this).val() !== "0") {
@@ -253,7 +264,8 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
             __doPostBack('cmbLRCKhataNumber', '');
         }, 0);
     }
-
+    
+   
     $("#myModal").modal("hide");
     count++;
 }
