@@ -94,7 +94,7 @@ function excelToPageHandleFile(e) {
                     record.તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો.trim(),
                     record.તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો.trim(),
                     record.તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો.trim(),
-                    record.ખાતા_નંબર_JAMIN.trim(),
+                    record.ખાતા_નંબર_JAMIN.toString().trim(),
                 );
             }
         };
