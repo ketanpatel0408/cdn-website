@@ -4,16 +4,12 @@ $(document).on("change", "#exe_FileUpload", function (e) {
     excelToPageHandleFile(e);
 });
 
-var count = 0;
-$(document).ready(function(){
-    if(count !== 0) {
-        alert("completed");
-    } else {
-        $("body").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />');
-        $.getScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', function() {
-            $.getScript('https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js', function() {
-                $.getScript('https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js', function() {
-                    var modalHTML = `
+$(document).ready(function () {
+    $("body").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />');
+    $.getScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', function () {
+        $.getScript('https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js', function () {
+            $.getScript('https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js', function () {
+                var modalHTML = `
                     <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -36,16 +32,15 @@ $(document).ready(function(){
                             </div>
                         </div>
                     </div>`;
-                    $("body").append(modalHTML);
-                    if($("#cmbRegCoOp").val() == "2") {
-                        $("#pnlRegMilkDetail").remove();
-                    }
-                    $("#userName").val($("#txtFName").val());
-                    $("#myModal").modal("show");
-                });
+                $("body").append(modalHTML);
+                if ($("#cmbRegCoOp").val() == "2") {
+                    $("#pnlRegMilkDetail").remove();
+                }
+                $("#userName").val($("#txtFName").val());
+                $("#myModal").modal("show");
             });
         });
-    }
+    });
 });
 
 
@@ -84,10 +79,10 @@ function excelToPageHandleFile(e) {
                 $("#txtRationCardNo").val(record.રેશન_કાર્ડ_નંબર);
                 TractorOnloadSelection(
                     record.જાતિ.trim(),
-                    record.લિંગ.trim(), 
-                    record.જીલ્લો.trim(), 
-                    record.તાલુકો.trim(), 
-                    record.ગામ.trim(), 
+                    record.લિંગ.trim(),
+                    record.જીલ્લો.trim(),
+                    record.તાલુકો.trim(),
+                    record.ગામ.trim(),
                     record.દિવ્યાંગ_છો_કે_કેમ.trim(),
                     record.ખેડૂતનો_પ્રકાર.trim(),
                     record.તમે_આત્માનું_રજીસ્ટ્રેશન_ધરાવો_છો.trim(),
@@ -107,7 +102,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         "ના": "2",
         "હા": "1",
     };
-    if($("#cmbPhysicialHandicapped").val() != PhysicialHandicapped[દિવ્યાંગ_છો_કે_કેમ]) {
+    if ($("#cmbPhysicialHandicapped").val() != PhysicialHandicapped[દિવ્યાંગ_છો_કે_કેમ]) {
         $("#cmbPhysicialHandicapped").val(PhysicialHandicapped[દિવ્યાંગ_છો_કે_કેમ]);
     }
 
@@ -116,14 +111,14 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         "સીમાંત ( ૧.૦ હે. કે તેથી ઓછા )": "2",
         "મોટા ( ૨.૦ હે. થી વધુ )": "3",
     };
-    if($("#cmbFarmerCategory").val() != FarmerCategory[ખેડૂતનો_પ્રકાર]) {
+    if ($("#cmbFarmerCategory").val() != FarmerCategory[ખેડૂતનો_પ્રકાર]) {
         $("#cmbFarmerCategory").val(FarmerCategory[ખેડૂતનો_પ્રકાર]);
     }
 
-    if($("#cmbRegAatma").val() != PhysicialHandicapped[તમે_આત્માનું_રજીસ્ટ્રેશન_ધરાવો_છો]) {
+    if ($("#cmbRegAatma").val() != PhysicialHandicapped[તમે_આત્માનું_રજીસ્ટ્રેશન_ધરાવો_છો]) {
         $("#cmbRegAatma").val(PhysicialHandicapped[તમે_આત્માનું_રજીસ્ટ્રેશન_ધરાવો_છો]);
     }
-    
+
     var casteMapping = {
         "એસ.સી.": "1",
         "એસ.ટી.": "2",
@@ -131,9 +126,9 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         "જનરલ": "4",
         "આર્થિક રીતે નબળા": "5"
     };
-    if($("#cmbCaste").val() != casteMapping[જાતિ]) {
+    if ($("#cmbCaste").val() != casteMapping[જાતિ]) {
         $("#cmbCaste").val(casteMapping[જાતિ]);
-        setTimeout(function() {
+        setTimeout(function () {
             __doPostBack('cmbCaste', '');
         }, 0);
     }
@@ -142,7 +137,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         "પુરુષ": "1",
         "સ્ત્રી": "2",
     };
-    if($("#cmbGender").val() != GenderMapping[લિંગ]) {
+    if ($("#cmbGender").val() != GenderMapping[લિંગ]) {
         $("#cmbGender").val(GenderMapping[લિંગ]);
     }
 
@@ -150,9 +145,9 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         "અમદાવાદ": "07",
     };
 
-    if($("#cmbDistBasicDetails").val() != District[જીલ્લો]) {
+    if ($("#cmbDistBasicDetails").val() != District[જીલ્લો]) {
         $("#cmbDistBasicDetails").val(District[જીલ્લો]);
-        setTimeout(function() {
+        setTimeout(function () {
             __doPostBack('cmbDistBasicDetails', '');
         }, 0);
     }
@@ -161,9 +156,9 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         "અસારવા": "14",
     };
 
-    if($("#cmbTalukaBasicDetails").val() != Taluko[તાલુકો]) {
+    if ($("#cmbTalukaBasicDetails").val() != Taluko[તાલુકો]) {
         $("#cmbTalukaBasicDetails").val(Taluko[તાલુકો]);
-        setTimeout(function() {
+        setTimeout(function () {
             __doPostBack('cmbTalukaBasicDetails', '');
         }, 0);
     }
@@ -172,30 +167,30 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         "કોતરપુર": "0714003",
     };
 
-    if($("#cmbVlgBasicDetails").val() != Village[ગામ]) {
+    if ($("#cmbVlgBasicDetails").val() != Village[ગામ]) {
         $("#cmbVlgBasicDetails").val(Village[ગામ]);
-        setTimeout(function() {
+        setTimeout(function () {
             __doPostBack('cmbVlgBasicDetails', '');
         }, 0);
     }
 
-    if($("#cmbRegCoOp").val() != PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
+    if ($("#cmbRegCoOp").val() != PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
         $("#cmbRegCoOp").val(PhysicialHandicapped[તમે_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
-        setTimeout(function() {
+        setTimeout(function () {
             __doPostBack('cmbRegCoOp', '');
         }, 0);
     }
 
-    if($("#cmbRegCoOp").val() == PhysicialHandicapped["હા"]) {
-        if($("#cmbRegMilkDist").val() != District[જીલ્લો]) {
+    if ($("#cmbRegCoOp").val() == PhysicialHandicapped["હા"]) {
+        if ($("#cmbRegMilkDist").val() != District[જીલ્લો]) {
             $("#cmbRegMilkDist").val(District[જીલ્લો]);
-            setTimeout(function() {
+            setTimeout(function () {
                 __doPostBack('cmbRegMilkDist', '');
             }, 0);
         }
-        if($("#cmbRegMilkTal").val() != Taluko[તાલુકો]) {
+        if ($("#cmbRegMilkTal").val() != Taluko[તાલુકો]) {
             $("#cmbRegMilkTal").val(Taluko[તાલુકો]);
-            setTimeout(function() {
+            setTimeout(function () {
                 __doPostBack('cmbRegMilkTal', '');
             }, 0);
         }
@@ -205,9 +200,9 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         // }
     }
 
-    if($("#cmbRegMilk").val() != PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
+    if ($("#cmbRegMilk").val() != PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]) {
         $("#cmbRegMilk").val(PhysicialHandicapped[તમે_દૂધ_ઉત્પદક_સહ્કારી_મંડળીનાં_સભ્ય_છો]);
-        setTimeout(function() {
+        setTimeout(function () {
             __doPostBack('cmbRegMilk', '');
         }, 0);
     }
@@ -216,55 +211,57 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         "જમીન રેકોર્ડ ધરાવું છું": "1",
         "ટ્રાઇબલ લેન્ડ ધરાવું છું": "2",
     };
-    if($("#cmbLRCKhatedarType").val() != LRCKhatedarType[તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો]) {
+    if ($("#cmbLRCKhatedarType").val() != LRCKhatedarType[તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો]) {
         $("#cmbLRCKhatedarType").val(LRCKhatedarType[તમે_કેવા_પ્રકારના_ખાતેદાર_છો_તે_પસંદ_કરો]);
-        setTimeout(function() {
+        setTimeout(function () {
             __doPostBack('cmbLRCKhatedarType', '');
         }, 0);
     }
 
-    if($("#txtIFSCCode").val() !== "") {
+    if ($("#txtIFSCCode").val() !== "") {
         $('#btnSearchBankBranch').click();
         WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("btnSearchBankBranch", "", true, "", "", false, false));
     }
 
-    if($("#cmbBank").val() == "0") {
-        $('#cmbBank option').each(function() {
-            if($(this).val() !== "0") {
+    if ($("#cmbBank").val() == "0") {
+        $('#cmbBank option').each(function () {
+            if ($(this).val() !== "0") {
                 $("#cmbBank").val($(this).val());
-                setTimeout(function() {
+                setTimeout(function () {
                     __doPostBack('cmbBank', '');
                 }, 0);
             }
         });
     }
 
-    if($("#cmbBankDist").length == 2) {
-        $('#cmbBankDist option').each(function() {
-            if($(this).val() !== "0") {
+    if ($("#cmbBankDist").length == 2) {
+        $('#cmbBankDist option').each(function () {
+            if ($(this).val() !== "0") {
                 $("#cmbBankDist").val($(this).val());
-                setTimeout(function() {
+                setTimeout(function () {
                     __doPostBack('cmbBankDist', '');
                 }, 0);
-
-                if($("#cmbBankBranch").val() == "0") {
-                    $('#cmbBankBranch option').each(function() {
-                        if($(this).val() !== "0") {
-                            $("#cmbBankBranch").val($(this).val());
-                        }
-                    });
-                }
-            
-                if($("#cmbLRCKhataNumber").val() != ખાતા_નંબર_JAMIN) {
-                    $("#cmbLRCKhataNumber").val(ખાતા_નંબર_JAMIN);
-                    setTimeout(function() {
-                        __doPostBack('cmbLRCKhataNumber', '');
-                    }, 0);
-                }
             }
         });
     }
-   
+
+    if ($("#cmbBank").val() == "47") {
+        if ($("#cmbBankBranch").val() == "0") {
+            $('#cmbBankBranch option').each(function () {
+                if ($(this).val() !== "0") {
+                    $("#cmbBankBranch").val($(this).val());
+                }
+            });
+        }
+
+        if ($("#cmbLRCKhataNumber").val() != ખાતા_નંબર_JAMIN) {
+            $("#cmbLRCKhataNumber").val(ખાતા_નંબર_JAMIN);
+            setTimeout(function () {
+                __doPostBack('cmbLRCKhataNumber', '');
+            }, 0);
+            alert("completed");
+        }
+    }
+
     $("#myModal").modal("hide");
-    count++;
 }
