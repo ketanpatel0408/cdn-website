@@ -235,35 +235,37 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
                 setTimeout(function() {
                     __doPostBack('cmbBank', '');
                 }, 0);
+                
+                if($("#cmbBankDist").val() == "0") {
+                    $('#cmbBankDist option').each(function() {
+                        if($(this).val() !== "0") {
+                            $("#cmbBankDist").val($(this).val());
+                            setTimeout(function() {
+                                __doPostBack('cmbBankDist', '');
+                            }, 0);
+                        }
+                    });
+                }
+            
+                if($("#cmbBankBranch").val() == "0") {
+                    $('#cmbBankBranch option').each(function() {
+                        if($(this).val() !== "0") {
+                            $("#cmbBankBranch").val($(this).val());
+                        }
+                    });
+                }
+            
+                if($("#cmbLRCKhataNumber").val() != ખાતા_નંબર_JAMIN) {
+                    $("#cmbLRCKhataNumber").val(ખાતા_નંબર_JAMIN);
+                    setTimeout(function() {
+                        __doPostBack('cmbLRCKhataNumber', '');
+                    }, 0);
+                }
             }
         });
     }
 
-    if($("#cmbBankDist").val() == "0") {
-        $('#cmbBankDist option').each(function() {
-            if($(this).val() !== "0") {
-                $("#cmbBankDist").val($(this).val());
-                setTimeout(function() {
-                    __doPostBack('cmbBankDist', '');
-                }, 0);
-            }
-        });
-    }
-
-    if($("#cmbBankBranch").val() == "0") {
-        $('#cmbBankBranch option').each(function() {
-            if($(this).val() !== "0") {
-                $("#cmbBankBranch").val($(this).val());
-            }
-        });
-    }
-
-    if($("#cmbLRCKhataNumber").val() != ખાતા_નંબર_JAMIN) {
-        $("#cmbLRCKhataNumber").val(ખાતા_નંબર_JAMIN);
-        setTimeout(function() {
-            __doPostBack('cmbLRCKhataNumber', '');
-        }, 0);
-    }
+    
     
    
     $("#myModal").modal("hide");
