@@ -236,7 +236,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         });
     }
 
-    if ($("#cmbBankDist").length == 2) {
+    if ($("#cmbBankDist").find('option:selected').text() == "-- બેંક જીલ્લો પસંદ કરો --" && $("#cmbBank").val() !== "0") {
         $('#cmbBankDist option').each(function () {
             if ($(this).val() !== "0") {
                 $("#cmbBankDist").val($(this).val());
