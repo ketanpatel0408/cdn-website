@@ -235,18 +235,18 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
                 setTimeout(function() {
                     __doPostBack('cmbBank', '');
                 }, 0);
-                
-                if($("#cmbBankDist").val() == "0") {
-                    $('#cmbBankDist option').each(function() {
-                        if($(this).val() !== "0") {
-                            $("#cmbBankDist").val($(this).val());
-                            setTimeout(function() {
-                                __doPostBack('cmbBankDist', '');
-                            }, 0);
-                        }
-                    });
-                }
-            
+            }
+        });
+    }
+
+    if($("#cmbBankDist").length == 2) {
+        $('#cmbBankDist option').each(function() {
+            if($(this).val() !== "0") {
+                $("#cmbBankDist").val($(this).val());
+                setTimeout(function() {
+                    __doPostBack('cmbBankDist', '');
+                }, 0);
+
                 if($("#cmbBankBranch").val() == "0") {
                     $('#cmbBankBranch option').each(function() {
                         if($(this).val() !== "0") {
@@ -264,9 +264,6 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
             }
         });
     }
-
-    
-    
    
     $("#myModal").modal("hide");
     count++;
