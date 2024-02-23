@@ -224,6 +224,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
             $('#cmbBankBranch option').each(function () {
                 if ($(this).val() !== "0") {
                     $("#cmbBankBranch").val($(this).val());
+                    alert("બધી માહિતી ભરાય ગઈ છે હવે તમે અરજી સેવ કરી શકો છો");
                 }
             });
         }
