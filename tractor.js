@@ -218,7 +218,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         }, 0);
     }
 
-    if ($("#cmbBank").length == 2) {
+    if ($("#cmbBank").val() == "0") {
         if ($("#txtIFSCCode").val() !== "") {
             $('#btnSearchBankBranch').click();
             WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("btnSearchBankBranch", "", true, "", "", false, false));
