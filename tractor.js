@@ -217,5 +217,26 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
         }, 0);
     }
 
+    $('#btnSearchBankBranch').click();
+
+    if($("#cmbBankDist").val() == "0") {
+        $('#cmbBankDist option').each(function() {
+            if($(this).val() !== "0") {
+                $("#cmbBankDist").val($(this).val());
+            }
+        });
+        setTimeout(function() {
+            __doPostBack('cmbBankDist', '');
+        }, 0);
+    }
+    
+    if($("#cmbBankBranch").val() == "0") {
+        $('#cmbBankBranch option').each(function() {
+            if($(this).val() !== "0") {
+                $("#cmbBankBranch").val($(this).val());
+            }
+        });
+    }
+
     $("#myModal").modal("hide");   
 }
