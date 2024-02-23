@@ -1,7 +1,13 @@
 $(document).on("change", "#exe_FileUpload", function (e) {
     $("#txtFName").val($("#userName").val());
     $("#txtFName").attr("value", $("#userName").val());
-    excelToPageHandleFile(e);
+    var userNameValue = $('#userName').val();
+    if (!userNameValue) {
+        alert('એક્સેલ અપલોડ કરતા પહેલા કૃપા કરીને નામ દાખલ કરો.');
+        $('#exe_FileUpload').val('');
+    } else {
+        excelToPageHandleFile(e);
+    }
 });
 
 $(document).ready(function () {
@@ -45,6 +51,7 @@ $(document).ready(function () {
 
 
 function excelToPageHandleFile(e) {
+    $("#myModal").modal("hide");
     var files = e.target.files;
     if (files.length > 0) {
         var file = files[0];
@@ -261,8 +268,7 @@ function TractorOnloadSelection(જાતિ, લિંગ, જીલ્લો, 
             setTimeout(function () {
                 __doPostBack('cmbLRCKhataNumber', '');
             }, 0);
-            $("#myModal").modal("hide");
-            alert("completed");
+            alert("બધી માહિતી ભરાય ગઈ છે હવે તમે અરજી સેવ કરી શકો છો");
         }
     }
 }
