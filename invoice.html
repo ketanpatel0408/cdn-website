@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <style>
         @page {
             size: A4;
@@ -41,7 +42,7 @@
                 <td colspan="3" class="text-sm text-center border-current border-b p-2" contenteditable="true">Ratanpar Fatak pase, ground floor, 3, Taramani Complex, Lati Bazar Road, Ratanpar, wadhwan, Surendranagar, Surendranagar, Gujarat, 363020</td>
             </tr>
             <tr>
-                <td class="text-left p-1 font-bold border-current border-b" contenteditable="true">Debit Memo</td>
+                <td class="text-left p-1 font-bold border-current border-b" contenteditable="true">Cash Memo</td>
                 <td class="text-center p-1 font-bold border-current border-b" contenteditable="true">TAX INVOICE</td>
                 <td class="text-right p-1 font-bold border-current border-b" contenteditable="true">Original</td>
             </tr>
@@ -92,7 +93,8 @@
                                 </div>
                                 <div class="flex">
                                     <p class="max-w-[85px] min-w-[85px]" contenteditable="true">Date</p>
-                                    <p class="">: <span class="ml-2" contenteditable="true">02/04/2023</span></p>
+                                    <p class="flex">: <input id="datePiker" class="border-0 bg-transparent p-0 ml-3 text-[14px]" /></p>
+                                    <!-- <span class="ml-2" contenteditable="true" ></span> -->
                                 </div>
                             </div>
                             <div class="p-1 px-2 font-semibold">
@@ -253,5 +255,6 @@
     </table>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="invoice.js"></script>
 </html>

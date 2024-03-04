@@ -3,6 +3,13 @@ $(document).ready(function () {
         var editedText = $(this).text();
     });
 
+    $('#datePiker').datepicker({
+        dateFormat: 'dd/mm/yy',
+        onSelect: function(dateText, inst) {
+            $(this).text(dateText);
+        }
+    }).datepicker('setDate', new Date());
+
     var rowCount = 12;
     for (var i = 0; i < rowCount; i++) {
         var newRowHtml = '<div class="row flex">' +
@@ -20,8 +27,17 @@ $(document).ready(function () {
     }
 });
 
+
 $('#invoiceTable').on('blur', '.rate', function() {
     var rate = $(this).text();
+    var quntity =  parseFloat($(this).closest(".row").find(".qty").text());
+    if(isNaN(quntity)) {
+        alert("પેહલા કઓન્ટિટી નાખો");
+        $(this).text("");
+        return false;
+    }
+    var rate1 = rate * quntity.toString();
+    rate = rate1.toString();
     var amount = $(this).closest(".row").find(".amount");
     var gst = $(this).closest(".row").find(".gst");
     amount.text(rate);
