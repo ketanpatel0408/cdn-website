@@ -87,15 +87,24 @@ $('#invoiceTable').on('focus', '.qty, .number', function() {
 
 function AmountRate() {
     var subtotal = 0.00;
+    var Qty = 0;
     $('#invoiceTable .body .row').each(function () {
         if ($(this).text() !== "") {
             var amountText = $(this).find('.cell:last').text().trim();
             var amount = parseFloat(amountText.replace(/[^\d.-]/g, ''));
             subtotal += amount;
+
+            var QtyText = parseFloat($(this).find('.qty').text());
+            Qty += QtyText;
         }
     });
+
     if (isNaN(subtotal)) {
         subtotal = 0.00;
+    }
+
+    if (isNaN(Qty)) {
+        Qty = 0.000;
     }
     var cgst = (subtotal * 0.09).toFixed(2);
     var sgst = (subtotal * 0.09).toFixed(2);
@@ -112,6 +121,7 @@ function AmountRate() {
     var formattedSubtotal = roundedSubtotal.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
     // Update values in respective elements
+    $("#totalQty").text(Qty.toFixed(3));
     $('#subTotal').text(formattedSubtotal);
     $('#TaxableAmount').text(formattedSubtotal);
     $('#cgst').text(cgst);
