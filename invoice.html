@@ -41,9 +41,9 @@
             <tr>
                 <td colspan="3" class="text-sm text-center border-current border-b p-2 relative" contenteditable="true">Ratanpar Fatak pase, ground floor, 3, Taramani Complex, Lati Bazar Road,<br /> Ratanpar, wadhwan, Surendranagar, Gujarat, 363020 <span class="font-semibold absolute bottom-2 right-1">Mo.: 9429051469</span></td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td colspan="3" class="text-xs text-center p-1 border-current border-b bg-[#f1f1f1]">V2 | V3 | V4 | V5 | V6 | V7 | V8 | V9 | Submersible, Openwell & Self Priming Pumps</td>
-            </tr>
+            </tr> -->
             <tr>
                 <td class="text-left p-1 font-bold border-current border-b" contenteditable="true">Cash Memo</td>
                 <td class="text-center p-1 font-bold border-current border-b" contenteditable="true">TAX INVOICE</td>
@@ -63,15 +63,15 @@
                                     <p class="uppercase font-semibold mb-1" contenteditable="true"><span>surendranagar</span> - <span>363020</span></p>
                                 </div>
                             </div>
-                            <div class="flex p-1 pt-3">
+                            <div class="flex p-1 pt-5 pb-4">
                                 <div>
                                     <p class="flex flex-nowrap font-semibold">GSTIN No. :</p>
                                 </div>
                                 <div class="ml-3">
-                                    <span contenteditable="true">24DWMPM61866A6789</span>
+                                    <span contenteditable="true">URD</span>
                                 </div>
                             </div>
-                            <div class="flex p-1">
+                            <!-- <div class="flex p-1">
                                 <div>
                                     <p class="flex flex-nowrap font-semibold">PAN No. :</p>
                                 </div>
@@ -86,36 +86,48 @@
                                 <div class="ml-3">
                                     <span contenteditable="true"></span>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="w-5/12 inline-block border-current border-b">
                             <div class="bg-[#eaeaea] p-1 px-2 font-semibold border-current border-b">
                                 <div class="flex">
-                                    <p class="max-w-[85px] min-w-[85px]" contenteditable="true">Invoice No.</p>
+                                    <p class="max-w-[85px] min-w-[85px] font-light" contenteditable="true">Invoice No.</p>
                                     <p class="">: <span class="ml-2" contenteditable="true">24-25/14</span></p>
                                 </div>
                                 <div class="flex">
-                                    <p class="max-w-[85px] min-w-[85px]" contenteditable="true">Date</p>
+                                    <p class="max-w-[85px] min-w-[85px] font-light" contenteditable="true">Dated</p>
                                     <p class="flex">: <input id="datePiker" class="border-0 bg-transparent p-0 ml-3 text-[14px]" /></p>
                                     <!-- <span class="ml-2" contenteditable="true" ></span> -->
                                 </div>
                             </div>
-                            <div class="p-1 px-2 font-semibold">
-                                <div class="flex">
-                                    <p class="max-w-[85px] min-w-[85px]" contenteditable="true">Transport</p>
-                                    <p class="">: <span class="ml-2" contenteditable="true"></span></p>
+                            <div class="font-semibold grid grid-cols-2 gap-0">
+                                <div class="text-[13px] p-1 px-2 font-base border-current border-b col-span-2">
+                                    <p class="max-w-[150px] min-w-[150px] font-light">Delivery Note</p>
+                                    <p class=""><span class="block" contenteditable="true"></span></p>
                                 </div>
-                                <div class="flex">
-                                    <p class="max-w-[85px] min-w-[85px]" contenteditable="true">L.R. No.</p>
-                                    <p class="">: <span class="ml-2" contenteditable="true"></span></p>
+                                <div class="text-[13px] p-1 px-2 font-base border-current border-b  border-r">
+                                    <p class="max-w-[150px] min-w-[150px] font-light">Buyer's Order No.</p>
+                                    <p class=""><span class="block" contenteditable="true"></span></p>
                                 </div>
-                                <div class="flex">
-                                    <p class="max-w-[85px] min-w-[85px]" contenteditable="true">L.R. Date</p>
-                                    <p class="">: <span class="ml-2" contenteditable="true"></span></p>
+                                <div class="text-[13px] p-1 px-2 font-base border-current border-b">
+                                    <p class="max-w-[150px] min-w-[150px] font-light">Dated</p>
+                                    <p class=""><input id="datePiker" class="border-0 bg-transparent p-0 text-[13px] leading-4 w-full normalDate" /></p>
                                 </div>
-                                <div class="flex">
-                                    <p class="max-w-[85px] min-w-[85px]" contenteditable="true">Cases</p>
-                                    <p class="">: <span class="ml-2" contenteditable="true"></span></p>
+                                <div class="text-[13px] p-1 px-2 font-base border-current border-b border-r">
+                                    <p class="max-w-[150px] min-w-[150px] font-light">Dispatch Doc No.</p>
+                                    <p class=""><span class="block" contenteditable="true"></span></p>
+                                </div>
+                                <div class="text-[13px] p-1 px-2 font-base border-current border-b">
+                                    <p class="max-w-[150px] min-w-[150px] font-light">Delivery Note Date</p>
+                                    <p class=""><input id="datePiker" class="border-0 bg-transparent p-0 text-[13px] leading-4 w-full normalDate" /></p>
+                                </div>
+                                <div class="text-[13px] p-1 px-2 font-base border-current border-r">
+                                    <p class="max-w-[150px] min-w-[150px] font-light">Dispatched through</p>
+                                    <p class=""><span class="block" contenteditable="true"></span></p>
+                                </div>
+                                <div class="text-[13px] p-1 px-2 font-base">
+                                    <p class="max-w-[150px] min-w-[150px] font-light">Destination</p>
+                                    <p class=""><span class="block" contenteditable="true"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +147,7 @@
                             <div class="cell font-bold text-center w-[7%] border-current border-r border-b">GST %</div>
                             <div class="cell font-bold text-center w-[13%] border-current border-b">Amount</div>
                         </div>
-                        <div class="body">
+                        <div class="body overflow-hidden h-[390px]">
                         </div>
                     </div>
                     <div class="flex">

@@ -10,6 +10,14 @@ $(document).ready(function () {
         }
     }).datepicker('setDate', new Date());
 
+    $('.normalDate').datepicker({
+        dateFormat: 'dd/mm/yy',
+        onSelect: function(dateText, inst) {
+            $(this).text(dateText);
+        }
+    })
+    
+
     var rowCount = 11;
     for (var i = 0; i < rowCount; i++) {
         var newRowHtml = '<div class="row flex">' +
