@@ -19,13 +19,18 @@ $(document).ready(function () {
             '<div class="cell align-top w-[8%] text-right border-current border-r p-1 pb-2 pt-2 qty" contenteditable="true"></div>' +
             '<div class="cell align-top w-[6%] text-center border-current border-r p-1 pb-2 pt-2 nos"></div>' +
             '<div class="cell align-top w-[13%] text-right border-current border-r p-1 pb-2 pt-2 rate number" contenteditable="true"></div>' +
-            '<div class="cell align-top w-[7%] text-right border-current border-r p-1 pb-2 pt-2 gst number"></div>' +
+            '<div class="cell align-top w-[7%] text-right border-current border-r p-1 pb-2 pt-2 gst number" contenteditable="false"></div>' +
             '<div class="cell align-top w-[13%] text-right p-1 pb-2 pt-2 number amount"></div>' +
             '</div>';
 
         $('#invoiceTable .body').append(newRowHtml);
     }
 });
+
+$(document).on('dblclick', '.gst.number', function() {
+    $(this).attr('contenteditable', 'true');
+});
+
 
 
 $('#invoiceTable').on('blur', '.rate', function() {
@@ -41,11 +46,11 @@ $('#invoiceTable').on('blur', '.rate', function() {
     var amount = $(this).closest(".row").find(".amount");
     var gst = $(this).closest(".row").find(".gst");
     amount.text(rate);
-    gst.text("18.00");
+    if(gst.text() == "") {
+        gst.text("18.00");
+    }
 
-    // Check if the input value is empty or not a number
     if (rate !== "" && !isNaN(rate)) {
-        // Check if the input value is a whole number
         if (rate.indexOf('.') === -1) {
             amount.text(parseFloat(rate).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
         } else {
@@ -59,7 +64,7 @@ $('#invoiceTable').on('blur', '.rate', function() {
         }
     }
 
-    AmountRate();
+    AmountRate(gst.text());
     if(rate == "") {
         amount.text("");
         gst.text("");
@@ -96,12 +101,13 @@ $('#invoiceTable').on('blur', '.qty', function() {
 
 $('#invoiceTable').on('focus', '.qty, .number', function() {
     if($(this).text() !== "") {
-        $(this).text(parseFloat($(this).replace(/[,\.]/g, '')).text())
+        var value = $(this).text().replace(/[,.]0*$/, '');
+        $(this).text(value);
     }
 });
 
 
-function AmountRate() {
+function AmountRate(gst) {
     var subtotal = 0.00;
     var Qty = 0;
     $('#invoiceTable .body .row').each(function () {
@@ -122,21 +128,19 @@ function AmountRate() {
     if (isNaN(Qty)) {
         Qty = 0.000;
     }
-    var cgst = (subtotal * 0.09).toFixed(2);
-    var sgst = (subtotal * 0.09).toFixed(2);
+    var gstCount = gst;
+    var cgst = (subtotal * parseFloat(gstCount) / 2 / 100).toFixed(2);
+    var sgst = (subtotal * parseFloat(gstCount) / 2 / 100).toFixed(2);
     var totalAmount = (subtotal + parseFloat(cgst) + parseFloat(sgst)).toFixed(2);
 
-    var roundedTotalAmount = parseFloat(totalAmount); // Convert totalAmount to float
+    var roundedTotalAmount = parseFloat(totalAmount);
     var integerPart = Math.floor(roundedTotalAmount);
-    var roundedSubtotal = parseFloat(subtotal.toFixed(2)); // Round subtotal to two decimal places and convert to float
-    var roundoff = (roundedTotalAmount - roundedSubtotal).toFixed(2); // Calculate roundoff value
+    var roundedSubtotal = parseFloat(subtotal.toFixed(2));
+    var roundoff = (roundedTotalAmount - roundedSubtotal).toFixed(2);
     var number = roundoff;
     var words = convertToWords(number);
     $("#totalGSTWord").text(words);
-    // Round subtotal to two decimal places and add commas for thousands separators
     var formattedSubtotal = roundedSubtotal.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-
-    // Update values in respective elements
     $("#totalQty").text(Qty.toFixed(3));
     $('#subTotal').text(formattedSubtotal);
     $('#TaxableAmount').text(formattedSubtotal);
@@ -204,7 +208,7 @@ function convertToWords(number) {
 
     if (paisaPart > 0) {
         result = convertLessThanOneThousand(wholePart) + " And ";
-        result += convertLessThanOneThousand(paisaPart) + " Paisa";
+        result += convertLessThanOneThousand(paisaPart) + " Paise";
     } else {
         result += "";
     }
@@ -260,7 +264,7 @@ function convertToWordsBill(number) {
 
     if (paisaPart > 0) {
         result = convertLessThanOneThousand(wholePart) + " And ";
-        result += convertLessThanOneThousand(paisaPart) + " Paisa";
+        result += convertLessThanOneThousand(paisaPart) + " Paise";
     } else {
         result += "";
     }
