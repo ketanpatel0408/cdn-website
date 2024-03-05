@@ -10,7 +10,7 @@ $(document).ready(function () {
         }
     }).datepicker('setDate', new Date());
 
-    var rowCount = 12;
+    var rowCount = 11;
     for (var i = 0; i < rowCount; i++) {
         var newRowHtml = '<div class="row flex">' +
             '<div class="cell align-top w-[6%] text-right border-current border-r p-1 pb-2 pt-2 HSN" contenteditable="true"></div>' +
