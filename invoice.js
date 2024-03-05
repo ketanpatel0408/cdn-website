@@ -129,6 +129,8 @@ function AmountRate(gst) {
         Qty = 0.000;
     }
     var gstCount = gst;
+    var halfGstCount = (parseFloat(gstCount) / 2).toFixed(2);
+    $("#cgstHalf, #sgstHalf").text(`${halfGstCount}%`);
     var cgst = (subtotal * parseFloat(gstCount) / 2 / 100).toFixed(2);
     var sgst = (subtotal * parseFloat(gstCount) / 2 / 100).toFixed(2);
     var totalAmount = (subtotal + parseFloat(cgst) + parseFloat(sgst)).toFixed(2);
