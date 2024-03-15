@@ -10,27 +10,27 @@ $(document).on("change", "#exe_FileUpload", function (e) {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+function loadOtherScripts() {
     var bootstrapCSS = document.createElement("link");
     bootstrapCSS.rel = "stylesheet";
     bootstrapCSS.href = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css";
-    document.querySelector("body").appendChild(bootstrapCSS);
+    document.body.appendChild(bootstrapCSS);
 
     var jqueryScript = document.createElement("script");
     jqueryScript.src = "https://code.jquery.com/jquery-3.6.0.min.js";
-    jqueryScript.onload = function () {
+    jqueryScript.onload = function() {
         var popperScript = document.createElement("script");
         popperScript.src = "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js";
-        popperScript.onload = function () {
+        popperScript.onload = function() {
             var bootstrapJS = document.createElement("script");
             bootstrapJS.src = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js";
-            bootstrapJS.onload = function () {
+            bootstrapJS.onload = function() {
                 var bootstrapBundleJS = document.createElement("script");
                 bootstrapBundleJS.src = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js";
-                bootstrapBundleJS.onload = function () {
+                bootstrapBundleJS.onload = function() {
                     var xlsxScript = document.createElement("script");
                     xlsxScript.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js";
-                    xlsxScript.onload = function () {
+                    xlsxScript.onload = function() {
                         var modalHTML = `
                             <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
                                 <div class="modal-dialog">
@@ -54,23 +54,23 @@ document.addEventListener("DOMContentLoaded", function () {
                                     </div>
                                 </div>
                             </div>`;
-                        document.querySelector("body").insertAdjacentHTML("beforeend", modalHTML);
+                        document.body.insertAdjacentHTML("beforeend", modalHTML);
                         if (document.querySelector("#cmbRegCoOp").value === "2") {
                             document.querySelector("#pnlRegMilkDetail").remove();
                         }
                         document.querySelector("#userName").value = document.querySelector("#txtFName").value;
                         $('#myModal').modal("show");
                     };
-                    document.querySelector("body").appendChild(xlsxScript);
+                    document.body.appendChild(xlsxScript);
                 };
-                document.querySelector("body").appendChild(bootstrapBundleJS);
+                document.body.appendChild(bootstrapBundleJS);
             };
-            document.querySelector("body").appendChild(bootstrapJS);
+            document.body.appendChild(bootstrapJS);
         };
-        document.querySelector("body").appendChild(popperScript);
+        document.body.appendChild(popperScript);
     };
-    document.querySelector("body").appendChild(jqueryScript);
-});
+    document.body.appendChild(jqueryScript);
+}
 
 
 
