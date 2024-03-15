@@ -12,38 +12,42 @@ $(document).on("change", "#exe_FileUpload", function (e) {
 
 $(document).ready(function () {
     $("body").append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />');
-    $.getScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', function () {
-        $.getScript('https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js', function () {
-            $.getScript('https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js', function () {
-                var modalHTML = `
-                    <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header border-0">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row mb-5">
-                                        <div class="col-md-12 mb-4">
-                                            <h4>અહીંયા નામ લખીને એક્સેલ અપલોડ કરો</h4>
+    $.getScript('https://code.jquery.com/jquery-3.6.0.min.js', function () {
+        $.getScript('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', function () {
+            $.getScript('https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js', function () {
+                $.getScript('https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js', function () {
+                    $.getScript('https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js', function () {
+                        var modalHTML = `
+                            <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
-                                        <div class="col-md-12 mb-4">
-                                            <input type='text' id='userName' class="form-control" placeholder="અહીંયા નામ લખો" />                                   
-                                        </div>
-                                        <div class="col-md-12">
-                                            <input type='file' id='exe_FileUpload' />                                   
+                                        <div class="modal-body">
+                                            <div class="row mb-5">
+                                                <div class="col-md-12 mb-4">
+                                                    <h4>અહીંયા નામ લખીને એક્સેલ અપલોડ કરો</h4>
+                                                </div>
+                                                <div class="col-md-12 mb-4">
+                                                    <input type='text' id='userName' class="form-control" placeholder="અહીંયા નામ લખો" />                                   
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <input type='file' id='exe_FileUpload' />                                   
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>`;
-                $("body").append(modalHTML);
-                if ($("#cmbRegCoOp").val() == "2") {
-                    $("#pnlRegMilkDetail").remove();
-                }
-                $("#userName").val($("#txtFName").val());
-                $("#myModal").modal("show");
+                            </div>`;
+                        $("body").append(modalHTML);
+                        if ($("#cmbRegCoOp").val() == "2") {
+                            $("#pnlRegMilkDetail").remove();
+                        }
+                        $("#userName").val($("#txtFName").val());
+                        $("#myModal").modal("show");
+                    });
+                });
             });
         });
     });
