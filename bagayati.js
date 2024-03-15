@@ -56,7 +56,9 @@ function loadOtherScripts() {
                             </div>`;
                         document.body.insertAdjacentHTML("beforeend", modalHTML);
                         if (document.querySelector("#cmbRegCoOp").value === "2") {
-                            document.querySelector("#pnlRegMilkDetail").remove();
+                            if($("#pnlRegMilkDetail").length !== 0) {
+                                document.querySelector("#pnlRegMilkDetail").remove();
+                            }
                         }
                         document.querySelector("#userName").value = document.querySelector("#txtFName").value;
                         $('#myModal').modal("show");
