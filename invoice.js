@@ -35,8 +35,9 @@ $(document).ready(function () {
     }
 });
 
-$(document).on('dblclick', '.gst.number', function() {
+$(document).on('click', '.gst.number', function() {
     $(this).attr('contenteditable', 'true');
+    $(this).focus();
 });
 
 $(document).on('blur', '.gst.number', function() {
