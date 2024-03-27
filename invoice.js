@@ -39,6 +39,10 @@ $(document).on('dblclick', '.gst.number', function() {
     $(this).attr('contenteditable', 'true');
 });
 
+$(document).on('blur', '.gst.number', function() {
+    AmountRate($(this).text())
+});
+
 
 
 $('#invoiceTable').on('blur', '.rate', function() {
