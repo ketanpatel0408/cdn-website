@@ -55,9 +55,11 @@ function loadOtherScripts() {
                                 </div>
                             </div>`;
                         document.body.insertAdjacentHTML("beforeend", modalHTML);
-                        if (document.querySelector("#cmbRegCoOp").value === "2") {
-                            if($("#pnlRegMilkDetail").length !== 0) {
-                                document.querySelector("#pnlRegMilkDetail").remove();
+                        if (document.querySelector("#cmbRegCoOp")) {
+                            if (document.querySelector("#cmbRegCoOp").value === "2") {
+                                if (document.querySelector("#pnlRegMilkDetail")) {
+                                    document.querySelector("#pnlRegMilkDetail").remove();
+                                }
                             }
                         }
                         document.querySelector("#userName").value = document.querySelector("#txtFName").value;
