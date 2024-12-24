@@ -12,7 +12,7 @@
     <style>
         @page {
             size: A4;
-            margin: 0 auto;
+            margin: 5mm;
         }
         html, body {
             width: 209mm;
@@ -28,6 +28,21 @@
         }
         *, ::after, ::before {
             box-sizing: border-box;
+        }
+        button.savePDF {
+            position: fixed;
+            z-index: 2;
+            top: 10px;
+            right: 10px;
+            padding: 10px 30px;
+            border-radius: 10px;
+            background-color: rgb(255, 169, 107);
+            border: 2px solid rgb(255, 169, 107);
+            font-weight: bold;
+        }
+
+        button.savePDF:hover {
+            background-color: rgb(255, 255, 255);
         }
         /* Your additional styles go here */
     </style>
@@ -268,8 +283,12 @@
             </tr>
         </tbody>
     </table>
+    
+    <button type="submit" class="savePDF">Save PDF</button>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="umiya.js"></script>
 </html>

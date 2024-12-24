@@ -287,3 +287,9 @@ function convertToWordsBill(number) {
     return result + " Only";
 }
 
+document.querySelector('.savePDF').addEventListener('click', function () {
+    $('.savePDF').hide();
+    window.print();
+
+    $('.savePDF').show();
+});
