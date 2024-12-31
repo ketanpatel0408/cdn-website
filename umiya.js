@@ -23,8 +23,8 @@ $(document).ready(function () {
         var newRowHtml = '<div class="row flex">' +
             '<div class="cell align-top w-[6%] text-right border-current border-r p-1 pb-2 pt-2 HSN" contenteditable="true"></div>' +
             '<div class="cell align-top w-[37%] text-left border-current border-r p-1 pb-2 pt-2" contenteditable="true"></div>' +
-            '<div class="cell align-top w-[10%] text-center border-current border-r p-1 pb-2 pt-2 HSN" contenteditable="true"></div>' +
-            '<div class="cell align-top w-[8%] text-right border-current border-r p-1 pb-2 pt-2 qty" contenteditable="true"></div>' +
+            '<div class="cell align-top w-[8%] text-center border-current border-r p-1 pb-2 pt-2 HSN" contenteditable="true"></div>' +
+            '<div class="cell align-top w-[10%] text-right border-current border-r p-1 pb-2 pt-2 qty" contenteditable="true"></div>' +
             '<div class="cell align-top w-[6%] text-center border-current border-r p-1 pb-2 pt-2 nos"></div>' +
             '<div class="cell align-top w-[13%] text-right border-current border-r p-1 pb-2 pt-2 rate number" contenteditable="true"></div>' +
             '<div class="cell align-top w-[7%] text-right border-current border-r p-1 pb-2 pt-2 gst number" contenteditable="false"></div>' +
