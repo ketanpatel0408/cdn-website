@@ -99,9 +99,9 @@ function excelToPageHandleFile(e) {
             if (record) {
                 $("#TxtFHName").val(record.પિતા_પતિનું_નામ);
                 $("#TxtSurname").val(record.અટક);
-                $("#TxtAdd").val(record.સરનામું);
-                $("#TxtAdd1").val(record.સરનામું);
-                $("#TxtAdd2").val(record.સરનામું);
+                $("#TxtAdd").val(record.સરનામું_1);
+                $("#TxtAdd1").val(record.સરનામું_2);
+                $("#TxtAdd2").val(record.સરનામું_3);
                 $("#TxtAadharNo").val(record.આધાર_નંબર);
                 $("#TxtMobNo1").val(record.મોબાઇલ_નંબર);
                 $("#TxtPhoneNo").val(record.ફોન_નંબર);
@@ -109,7 +109,7 @@ function excelToPageHandleFile(e) {
                 $("#TxtDLNo").val(record.ડ્રાઈવિંગ_લાઈસંસ_નંબર);
                 $("#TxtNameAadhaar").val(record.Name_As_per_Aadhaar);
                 $("#TxtDOB").datepicker("setDate", record.Date_of_Birth);
-                $("#ddlGender option:selected").text(record.Date_of_Birth);
+                $("#ddlGender option:selected").text(record.Gender);
             }
         };
         reader.readAsArrayBuffer(file);
