@@ -10,6 +10,7 @@ $(document).on("change", "#exe_FileUpload", function (e) {
     }
 });
 
+loadOtherScripts();
 function loadOtherScripts() {
     var bootstrapCSS = document.createElement("link");
     bootstrapCSS.rel = "stylesheet";
@@ -108,7 +109,8 @@ function excelToPageHandleFile(e) {
                 $("#TxtElecID").val(record.મતદાતા_ઓળખપત્ર_નંબર);
                 $("#TxtDLNo").val(record.ડ્રાઈવિંગ_લાઈસંસ_નંબર);
                 $("#TxtNameAadhaar").val(record.Name_As_per_Aadhaar);
-                $("#TxtDOB").datepicker("setDate", record.Date_of_Birth);
+                document.getElementById("TxtNameAadhaar").click();
+                // $("#TxtDOB").datepicker("setDate", record.Date_of_Birth);
                 $("#ddlGender option:selected").text(record.Gender);
             }
         };
