@@ -10,7 +10,6 @@ $(document).on("change", "#exe_FileUpload", function (e) {
     }
 });
 
-loadOtherScripts();
 function loadOtherScripts() {
     var bootstrapCSS = document.createElement("link");
     bootstrapCSS.rel = "stylesheet";
