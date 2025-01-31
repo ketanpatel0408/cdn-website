@@ -10,12 +10,33 @@ $(document).on("change", "#exe_FileUpload", function (e) {
     }
 });
 
-loadOtherScripts();
+$("#btnNewEntry").click(function(){
+    let TxtApplName = new MutationObserver((mutations, obs) => {
+        let options = $("#TxtApplName");
+        if (options.length > 0) {
+            loadOtherScripts();
+            obs.disconnect();
+        }
+    });
+    TxtApplName.observe(document.body, { childList: true, subtree: true });
+});
+
 function loadOtherScripts() {
     var bootstrapCSS = document.createElement("link");
     bootstrapCSS.rel = "stylesheet";
-    bootstrapCSS.href = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css";
+    bootstrapCSS.href = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/css/bootstrap-modal.min.css";
     document.body.appendChild(bootstrapCSS);
+    
+    var customStyle = document.createElement("style");
+    customStyle.innerHTML = `
+    .modal.fade {
+        top: 0 !important;
+    }
+    .modal-backdrop {
+        background: #000000 !important;
+    }
+    `;
+    document.head.appendChild(customStyle);
 
     var popperScript = document.createElement("script");
     popperScript.src = "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js";
