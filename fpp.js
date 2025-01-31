@@ -10,28 +10,23 @@ $(document).on("change", "#exe_FileUpload", function (e) {
     }
 });
 
+loadOtherScripts();
 function loadOtherScripts() {
     var bootstrapCSS = document.createElement("link");
     bootstrapCSS.rel = "stylesheet";
     bootstrapCSS.href = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css";
     document.body.appendChild(bootstrapCSS);
 
-    var jqueryScript = document.createElement("script");
-    jqueryScript.src = "https://code.jquery.com/jquery-3.6.0.min.js";
-    jqueryScript.onload = function() {
-        var popperScript = document.createElement("script");
-        popperScript.src = "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js";
-        popperScript.onload = function() {
-            var bootstrapJS = document.createElement("script");
-            bootstrapJS.src = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js";
-            bootstrapJS.onload = function() {
-                var bootstrapBundleJS = document.createElement("script");
-                bootstrapBundleJS.src = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js";
-                bootstrapBundleJS.onload = function() {
-                    var xlsxScript = document.createElement("script");
-                    xlsxScript.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js";
-                    xlsxScript.onload = function() {
-                        var modalHTML = `
+    var popperScript = document.createElement("script");
+    popperScript.src = "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js";
+    popperScript.onload = function () {
+        var bootstrapJS = document.createElement("script");
+        bootstrapJS.src = "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js";
+        bootstrapJS.onload = function () {
+            var xlsxScript = document.createElement("script");
+            xlsxScript.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js";
+            xlsxScript.onload = function () {
+                var modalHTML = `
                             <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -54,26 +49,22 @@ function loadOtherScripts() {
                                     </div>
                                 </div>
                             </div>`;
-                        document.body.insertAdjacentHTML("beforeend", modalHTML);
-                        if (document.querySelector("#cmbRegCoOp")) {
-                            if (document.querySelector("#cmbRegCoOp").value === "2") {
-                                if (document.querySelector("#pnlRegMilkDetail")) {
-                                    document.querySelector("#pnlRegMilkDetail").remove();
-                                }
-                            }
+                document.body.insertAdjacentHTML("beforeend", modalHTML);
+                if (document.querySelector("#cmbRegCoOp")) {
+                    if (document.querySelector("#cmbRegCoOp").value === "2") {
+                        if (document.querySelector("#pnlRegMilkDetail")) {
+                            document.querySelector("#pnlRegMilkDetail").remove();
                         }
-                        document.querySelector("#userName").value = document.querySelector("#TxtApplName").value;
-                        $('#myModal').modal("show");
-                    };
-                    document.body.appendChild(xlsxScript);
-                };
-                document.body.appendChild(bootstrapBundleJS);
+                    }
+                }
+                document.querySelector("#userName").value = document.querySelector("#TxtApplName").value;
+                $('#myModal').modal("show");
             };
-            document.body.appendChild(bootstrapJS);
+            document.body.appendChild(xlsxScript);
         };
-        document.body.appendChild(popperScript);
+        document.body.appendChild(bootstrapJS);
     };
-    document.body.appendChild(jqueryScript);
+    document.body.appendChild(popperScript);
 }
 
 
@@ -107,10 +98,62 @@ function excelToPageHandleFile(e) {
                 $("#TxtPhoneNo").val(record.ફોન_નંબર);
                 $("#TxtElecID").val(record.મતદાતા_ઓળખપત્ર_નંબર);
                 $("#TxtDLNo").val(record.ડ્રાઈવિંગ_લાઈસંસ_નંબર);
+                $("#VerifyDetails").show();
                 $("#TxtNameAadhaar").val(record.Name_As_per_Aadhaar);
-                document.getElementById("TxtNameAadhaar").click();
-                // $("#TxtDOB").datepicker("setDate", record.Date_of_Birth);
-                $("#ddlGender option:selected").text(record.Gender);
+                $("#rdbDOB").prop("checked", true).trigger("click");
+                $("#TxtDOB").datepicker("setDate", record.Date_of_Birth);
+                $("#ddlGender").val(record.Gender);
+                $("#wizard-p-1").show();
+                $("#wizard-p-2").show();
+                $('#ddlLRCDist').val("08");
+                $('#ddlLRCDist').trigger("change");
+                let ddlLRCTlkm = new MutationObserver((mutations, obs) => {
+                    let options = $("#ddlLRCTlkm option");
+                    if (options.length > 1) {
+                        $("#ddlLRCTlkm").val("06").trigger("change");
+                        obs.disconnect();
+                    }
+                });
+                ddlLRCTlkm.observe(document.body, { childList: true, subtree: true });
+                let ddlLRCVlgm = new MutationObserver((mutations, obs) => {
+                    let options = $("#ddlLRCVlgm option");
+                    if (options.length > 1) {
+                        $("#ddlLRCVlgm").val("0806051").trigger("change");
+                        obs.disconnect();
+                    }
+                });
+                ddlLRCVlgm.observe(document.body, { childList: true, subtree: true });
+                let ddlKhataNo = new MutationObserver((mutations, obs) => {
+                    let options = $("#ddlKhataNo option");
+                    if (options.length > 1) {
+                        $("#ddlKhataNo").val(record.ખાતા_નંબર).trigger("change");
+                        obs.disconnect();
+                    }
+                });
+                ddlKhataNo.observe(document.body, { childList: true, subtree: true });
+                $("#ddlBankDist").val("8");
+                let ddlBank = new MutationObserver((mutations, obs) => {
+                    let options = $("#ddlBank option");
+                    if (options.length > 1) {
+                        $("#ddlBank").val("47").trigger("change");
+                        obs.disconnect();
+                    }
+                });
+                ddlBank.observe(document.body, { childList: true, subtree: true });
+                let ddlBankBranch = new MutationObserver((mutations, obs) => {
+                    let options = $("#ddlBankBranch option");
+                    if (options.length > 1) {
+                        $("#ddlBankBranch").val("5360").trigger("change");
+                        obs.disconnect();
+                    }
+                });
+                ddlBankBranch.observe(document.body, { childList: true, subtree: true });
+                $("#TxtBankAccountNo").val(record.Bank_Account_No);
+                $("#TxtCNFBankAccountNo").val(record.Bank_Account_No);
+                $("#wizard-p-1").hide();
+                $("#wizard-p-2").hide();
+                $("#ddlLRCTlkm").val("06").trigger("change");
+                $("#chkAVerify").trigger("click") && $("#btnVerify").trigger("click");
             }
         };
         reader.readAsArrayBuffer(file);
