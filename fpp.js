@@ -10,34 +10,8 @@ $(document).on("change", "#exe_FileUpload", function (e) {
     }
 });
 
-$("#btnNewEntry").click(function(){
-    let TxtApplName = new MutationObserver((mutations, obs) => {
-        let options = $("#TxtApplName");
-        if (options.length > 0) {
-            loadOtherScripts();
-            obs.disconnect();
-        }
-    });
-    TxtApplName.observe(document.body, { childList: true, subtree: true });
-});
-
+loadOtherScripts();
 function loadOtherScripts() {
-    var bootstrapCSS = document.createElement("link");
-    bootstrapCSS.rel = "stylesheet";
-    bootstrapCSS.href = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/css/bootstrap-modal.min.css";
-    document.body.appendChild(bootstrapCSS);
-    
-    var customStyle = document.createElement("style");
-    customStyle.innerHTML = `
-    .modal.fade {
-        top: 0 !important;
-    }
-    .modal-backdrop {
-        background: #000000 !important;
-    }
-    `;
-    document.head.appendChild(customStyle);
-
     var popperScript = document.createElement("script");
     popperScript.src = "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js";
     popperScript.onload = function () {
@@ -48,7 +22,7 @@ function loadOtherScripts() {
             xlsxScript.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js";
             xlsxScript.onload = function () {
                 var modalHTML = `
-                            <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+                            <div id="myModal" class="modal " data-backdrop="static" data-keyboard="false">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header border-0">
